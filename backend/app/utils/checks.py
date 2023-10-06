@@ -36,4 +36,6 @@ async def retrieve_user_details_from_discord(user_token: str):
         if response.status_code != 200:
             return None
 
-    return response.json()
+    res = response.json()
+    res["access_token"] = user_token
+    return res
