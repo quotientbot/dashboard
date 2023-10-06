@@ -1,11 +1,12 @@
 from app import config
 from fastapi import FastAPI
-from .routers import oauth
+from .routers import oauth, user
 from tortoise.contrib.fastapi import register_tortoise
 
 
 app = FastAPI()
 app.include_router(oauth.router, prefix="/oauth")
+app.include_router(user.router, prefix="/user")
 
 
 @app.get("/")
