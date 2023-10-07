@@ -5,6 +5,9 @@ import { useLocation } from 'react-router-dom';
 import { AiOutlineBars } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import logo from '../../Assests/favicon.png';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../state/actions/userSlice';
 
 
 const Navbar = () => {
@@ -31,6 +34,8 @@ const Navbar = () => {
     },
   ];
 
+  const {token } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const location = useLocation();
   const activePath = location.pathname.split('/');
   const activelink = activePath[activePath.length - 1];
@@ -92,7 +97,21 @@ const Navbar = () => {
             </Link>
           ))}
           <div>
-            <Link to='/login'>login</Link>
+            {token ? (
+              <Link
+
+                className='bg-[#02F3B5] text-white rounded-md'
+                onClick={() => dispatch(logout())}
+                to='/'
+
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link to='/login'>
+                <Commanbtn type={true} text='Login' path='/login' />
+              </Link>
+            )}
           </div>
         </div>
       </div>
