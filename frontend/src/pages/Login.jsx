@@ -50,22 +50,19 @@ const Login = () => {
 
     const ExchangeToken = ({code}) => {
         getToken(code);
-        return <><Loader/></>
+        return <Loader/>
     }
 
     // Loaders should be part of the component rendering, not returned from a function
     return (
-        <>
+        <div>
             {code == null ?  <GetCode /> :<ExchangeToken code={code}/> }
-        </>
+        </div>
     )
 }
 
 
 const GetCode = () => {
-
-    // localStorage.clear()
-
     const query = useQuery();
     const prompt = !!query.get('noprompt');
     localStorage.setItem("_q_last_page", links.home);
@@ -73,9 +70,7 @@ const GetCode = () => {
     
 
 	return (
-		<>
 			<Loader full />
-		</>
 	)
 }
 
