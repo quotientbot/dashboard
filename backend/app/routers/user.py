@@ -2,16 +2,20 @@ from fastapi import APIRouter, Depends
 from app.utils import checks
 from app.config import DISCORD_API_ENDPOINT, BOT_TOKEN
 import httpx
+from fastapi_cache.decorator import cache
+
 
 router = APIRouter()
 
 
 @router.get("/@me")
+@cache(expire=60)
 async def _me(user: dict = Depends(checks.get_user_details)):
     return user
 
 
 @router.get("/@me/guilds")
+@cache(expire=60)
 async def get_user_guilds(user: dict = Depends(checks.get_user_details)):
     discord_url = DISCORD_API_ENDPOINT + "/users/@me/guilds"
     headers = {
