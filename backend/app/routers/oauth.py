@@ -6,6 +6,8 @@ import httpx
 import secrets
 from datetime import datetime, timedelta
 import pytz
+from fastapi_cache.decorator import cache
+
 
 router = APIRouter()
 
@@ -25,6 +27,7 @@ async def generate_unique_token():
 
 
 @router.get("/")
+@cache(expire=10)
 async def _oauth(code: str = Query(..., title="Authorization code from Discord.")):
     # Step 1: Exchange authorization code for access token
     token_url = config.DISCORD_API_ENDPOINT + "/oauth2/token"
@@ -55,6 +58,4 @@ async def _oauth(code: str = Query(..., title="Authorization code from Discord."
         + timedelta(seconds=token_response.expires_in),
     )
 
-    response = Response(content=user_token)
-    response.set_cookie(key="user_token", value=user_token)
-    return response
+    return {"user_token": user_token}

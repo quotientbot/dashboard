@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from .routers import oauth, user
 from tortoise.contrib.fastapi import register_tortoise
 from starlette.middleware.cors import CORSMiddleware
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.inmemory import InMemoryBackend
 
 app = FastAPI()
 
@@ -22,6 +24,11 @@ app.include_router(user.router, prefix="/users")
 @app.get("/")
 async def root():
     return {"ping": "pong"}
+
+
+@app.on_event("startup")
+async def startup():
+    FastAPICache.init(InMemoryBackend(), prefix="fastapi-cache")
 
 
 register_tortoise(
