@@ -1,16 +1,16 @@
-from fastapi import HTTPException, Cookie
+from fastapi import HTTPException, Header
 from app.models import WebAuth
 from app.config import DISCORD_API_ENDPOINT
 import httpx
 
 
-async def get_user_details(user_token: str = Cookie("user_token")):
+async def get_user_details(token: str = Header(...)):
     # Check if the user_token cookie exists
-    if not user_token:
+    if not token:
         raise HTTPException(status_code=401, detail="User token is missing")
 
     # Retrieve user details from the db based on the token
-    user = await WebAuth.get_or_none(user_token=user_token)
+    user = await WebAuth.get_or_none(user_token=token)
 
     if user is None:
         raise HTTPException(status_code=401, detail="Invalid user token")
