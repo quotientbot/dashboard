@@ -6,8 +6,9 @@ import { AiOutlineBars } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import logo from '../../Assests/favicon.png';
 
+
 const Navbar = () => {
-  const links = [
+  const link = [
     {
       title: 'Home',
       link: '',
@@ -45,7 +46,7 @@ const Navbar = () => {
   useEffect(() => {
     // Add an event listener to update showLinks on window resize
     window.addEventListener('resize', updateShowLinks);
-    
+
     // Call the updateShowLinks function once on component mount
     updateShowLinks();
 
@@ -54,6 +55,12 @@ const Navbar = () => {
       window.removeEventListener('resize', updateShowLinks);
     };
   }, []);
+
+  
+
+  
+  
+
 
   return (
     <div className={`p-5 flex justify-between ${showLinks ? 'items-start' : 'items-center'}`}>
@@ -73,7 +80,7 @@ const Navbar = () => {
             showLinks ? 'flex flex-col absolute right-[5%]' : 'hidden'
           } md:flex md:items-center gap-5`}
         >
-          {links.map((item, i) => (
+          {link.map((item, i) => (
             <Link
               key={i}
               className={`${
@@ -85,7 +92,7 @@ const Navbar = () => {
             </Link>
           ))}
           <div>
-            <Commanbtn type={true} text="Login" path="/login" />
+            <Link to='/login'>login</Link>
           </div>
         </div>
       </div>
