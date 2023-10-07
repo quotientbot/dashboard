@@ -3,7 +3,6 @@ import Navbar from '../components/Core/Navbar'
 import Commanbtn from '../components/Buttons/Commanbtn'
 import logo from "../Assests/favicon.png"
 import Footer from '../components/Core/Footer'
-import { useLocation } from 'react-router-dom'
 
 const Home = () => {
 
