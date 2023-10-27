@@ -1,9 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Core/Navbar'
-import Commanbtn from '../components/Buttons/Commonbtn'
+import Commonbtn from '../components/Buttons/Commonbtn'
 import logo from "../Assets/favicon.png"
 import Footer from '../components/Core/Footer'
-import Loader from '../components/Core/Loader'
 
 const Home = () => {
 
@@ -22,8 +21,8 @@ const Home = () => {
             Quotient can automatically create dynamic point tables, check tags of all players, forbid entry of banned users who don’t join scrims on time, share ID passwords of custom rooms and handle big tourneys! 
           </div>
           <div className='flex flex-col md:flex-row gap-5'>
-            <Commanbtn type={true} text="Invite Me" path="/#"/>
-            <Commanbtn type={false} text="Join Us" path="/#"/>
+            <Commonbtn type={true} text="Invite Me" path="/#"/>
+            <Commonbtn type={false} text="Join Us" path="/#"/>
           </div>
         </div>
         <div className='w-full md:w-1/2'> 
