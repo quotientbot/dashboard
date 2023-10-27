@@ -27,9 +27,9 @@ function App() {
       });
       const data = await response.json();
       if(response.ok){
-        dispatch(userRequestSuccess({
-          currentUser: data
-        }));
+        dispatch(userRequestSuccess(
+           data
+        ));
       }else{
         dispatch(userRequestFailure());
       }
@@ -37,9 +37,6 @@ function App() {
     }catch(err){
       dispatch(userRequestFailure(err));
     }
-
-
-
   }
 
   useEffect(() => {
