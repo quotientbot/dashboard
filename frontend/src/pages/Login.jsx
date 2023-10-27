@@ -34,6 +34,7 @@ const Login = () => {
                         dispatch(loginSuccess({
                             token: res.data.user_token,
                         }));
+                        localStorage.setItem("QTOKEN", res.data.user_token)
 						window.location.href = links.home
 					}
 				} else {
@@ -64,9 +65,9 @@ const Login = () => {
 
 const GetCode = () => {
     const query = useQuery();
-    const prompt = !!query.get('noprompt');
+    const prompt = query.get('prompt') ?? null;
     localStorage.setItem("_q_last_page", links.home);
-    window.location.href = prompt ? links.oauth : links.no_prompt_auth;
+    window.location.href = prompt=== null ? links.oauth : links.no_prompt_auth;
     
 
 	return (

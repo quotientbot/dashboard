@@ -99,11 +99,12 @@ const Navbar = () => {
           <div>
             {token ? (
               <Link
-
                 className='bg-[#02F3B5] text-white rounded-md'
-                onClick={() => dispatch(logout())}
+                onClick={() => {
+                  localStorage.clear();
+                  dispatch(logout());
+                }}
                 to='/'
-
               >
                 Logout
               </Link>
