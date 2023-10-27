@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../Assests/favicon.png"
+import logo from "../../Assets/favicon.png"
 export default function Footer(){
     const FooterLinks = [
         {

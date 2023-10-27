@@ -1,8 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Core/Navbar'
-import Commanbtn from '../components/Buttons/Commanbtn'
-import logo from "../Assests/favicon.png"
+import Commanbtn from '../components/Buttons/Commonbtn'
+import logo from "../Assets/favicon.png"
 import Footer from '../components/Core/Footer'
+import Loader from '../components/Core/Loader'
 
 const Home = () => {
 
@@ -35,7 +36,6 @@ const Home = () => {
       </div>
 
       <Footer/>
-
     </div>
   )
 }
