@@ -35,11 +35,11 @@ const Login = () => {
                             token: res.data.user_token,
                         }));
                         localStorage.setItem("QTOKEN", res.data.user_token)
-						window.location.href = lastlocation
+						window.location.href = links.home
 					}
 				} else {
                     dispatch(loginFailure());
-                    window.location.href = lastlocation
+                    window.location.href = links.home
 				}
 			})
 			.catch((err) => {
