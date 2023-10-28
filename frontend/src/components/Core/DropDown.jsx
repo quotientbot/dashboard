@@ -10,6 +10,8 @@ import { logout } from '../../state/actions/userSlice'
 const DropDown = () => {
 
   const dispatch = useDispatch();
+  const avatarUrl = localStorage.getItem("avatarUrl") ?? "https://cdn.discordapp.com/embed/avatars/2.png";
+  
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -32,7 +34,7 @@ const DropDown = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src=""
+                        src={avatarUrl}
                         alt="https://cdn.discordapp.com/embed/avatars/2.png"
                       />
                     </Menu.Button>

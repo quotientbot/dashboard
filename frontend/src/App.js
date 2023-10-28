@@ -30,6 +30,13 @@ function App() {
         dispatch(userRequestSuccess(
            data
         ));
+
+          if(data.avatar !== null){
+            localStorage.setItem("avatarUrl", `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`)
+          }
+          else{
+            localStorage.setItem("avatarUrl", "https://cdn.discordapp.com/embed/avatars/2.png")
+          }
       }else{
         dispatch(userRequestFailure());
       }
