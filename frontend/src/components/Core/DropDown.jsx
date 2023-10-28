@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {  Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { BellIcon } from '@heroicons/react/24/outline'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { logout } from '../../state/actions/userSlice'
 
 
@@ -56,6 +56,16 @@ const DropDown = () => {
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/dashboard"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Dashboard
                           </Link>
                         )}
                       </Menu.Item>

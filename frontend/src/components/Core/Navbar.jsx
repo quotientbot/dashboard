@@ -11,7 +11,6 @@ import Commonbtn from '../Buttons/Commonbtn'
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'Features', href: '/features', current: false },
-  { name: 'Dashboard', href: '/dashboard', current: false },
   { name: 'Premium', href: '/premium', current: false },
 ]
 

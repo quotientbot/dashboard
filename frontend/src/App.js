@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { userRequestStart, userRequestSuccess, userRequestFailure } from "./state/actions/userSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import PrivateRoute from "./components/Core/PrivateRoute";
+import Dashboard from "./pages/Dashboard";
 
 
 function App() {
@@ -58,6 +60,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login />}/>
+          <Route element={<PrivateRoute/>}>
+            <Route path="/dashboard" element={<Dashboard/>} />
+          </Route>
         </Routes>
       </div>
   );
