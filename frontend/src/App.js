@@ -15,6 +15,7 @@ import Premium from "./components/guildsMenu/Premium";
 function App() {
 
   const {token} = useSelector((state) => state.user);
+  // eslint-disable-next-line
   const [isToken, setIsToken] = useState(token);
   const dispatch = useDispatch();
 
@@ -54,6 +55,7 @@ function App() {
     if(isToken !== null){
       getUser(token);
     }
+    // eslint-disable-next-line
   }, [token]);
   
   return (
