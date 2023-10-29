@@ -1,13 +1,13 @@
 import React from 'react'
-import { FallingLines } from "react-loader-spinner";
+import { Bars } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <FallingLines
+    <div className='flex justify-center items-center h-[100vh]'>
+      <Bars
       color="#4fa94d"
-      width="250"
-      height='100'
+      width="260"
+      height='110'
       visible={true}
       ariaLabel='falling-lines-loading'
       />
