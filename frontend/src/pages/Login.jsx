@@ -1,6 +1,6 @@
 import { links } from '../utils/axios/config';
 import { useLocation } from 'react-router-dom';
-import Loader from '../components/Core/Loader';
+import Loader from '../components/core/Loader';
 import React from 'react'
 import axios from '../utils/axios/axios'
 import { useDispatch } from 'react-redux';

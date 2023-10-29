@@ -1,10 +1,10 @@
 import { Disclosure} from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import image from "../../Assets/favicon.png";
+import image from "../../assets/favicon.png";
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
 import {useSelector} from 'react-redux';
-import Commonbtn from '../Buttons/Commonbtn'
+import Commonbtn from '../core/Button'
 
 
 const navigation = [

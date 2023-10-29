@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Core/Navbar";
-import Footer from "../components/Core/Footer";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/core/Footer";
 import { useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
