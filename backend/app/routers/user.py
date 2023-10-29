@@ -8,6 +8,8 @@ from fastapi_cache.decorator import cache
 router = APIRouter()
 
 
+# TODO: handle with guild icon hash null in /@me/guilds
+
 @router.get("/@me")
 @cache(expire=60)
 async def _me(user: dict = Depends(checks.get_user_details)):
@@ -49,6 +51,13 @@ async def get_user_guilds(user: dict = Depends(checks.get_user_details)):
                 user_guild["id"] == bot_guild["id"]
                 and (int(user_guild["permissions"]) & 0x00000020) == 0x00000020
             ):
+                user_guild["icon"] = (
+                    "https://cdn.discordapp.com/icons/"
+                    + user_guild["id"]
+                    + "/"
+                    + user_guild["icon"]
+                    + ".png"
+                )
                 mutual_guilds.append(user_guild)
 
     return mutual_guilds
