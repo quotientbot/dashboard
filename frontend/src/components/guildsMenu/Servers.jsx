@@ -6,6 +6,7 @@ import { useEffect } from "react";
 const Servers = () => {
     const dispatch = useDispatch();
     const guilds = useSelector((state) => state.guilds.guilds);
+    
     useEffect(()=>{
         const token = localStorage.getItem("QTOKEN");
         const servers = async (token) => {
@@ -32,8 +33,10 @@ const Servers = () => {
             }
           }      
         servers(token);
-        // console.log(guilds);
+      // eslint-disable-next-line
     },[])
+
+
     return (
         <div className="mt-10 bg-[#161616] p-5 rounded-lg">
             <div className="flex flex-col gap-1">
