@@ -1,63 +1,27 @@
 from fastapi import APIRouter, Depends
-from app.utils import checks
-from app.config import DISCORD_API_ENDPOINT, BOT_TOKEN
-import httpx
+from app.utils import checks, frequent
 from fastapi_cache.decorator import cache
 
 
 router = APIRouter()
 
 
-# TODO: handle with guild icon hash null in /@me/guilds
-
 @router.get("/@me")
 @cache(expire=60)
-async def _me(user: dict = Depends(checks.get_user_details)):
+async def me(user: dict = Depends(checks.get_user_details)):
+    """
+    Get current user's details.
+    """
     return user
 
 
 @router.get("/@me/guilds")
 @cache(expire=60)
-async def get_user_guilds(user: dict = Depends(checks.get_user_details)):
-    discord_url = DISCORD_API_ENDPOINT + "/users/@me/guilds"
-    headers = {
-        "Authorization": f"Bearer {user['access_token']}",
-    }
-
-    # Get user's guilds
-    async with httpx.AsyncClient() as client:
-        response = await client.get(discord_url, headers=headers)
-        if response.status_code != 200:
-            return response.json()
-
-    user_guilds = response.json()
-
-    # Get bot's guilds
-    headers = {
-        "Authorization": f"Bot {BOT_TOKEN}",
-    }
-
-    async with httpx.AsyncClient() as client:
-        response = await client.get(discord_url, headers=headers)
-        if response.status_code != 200:
-            return response.json()
-
-    bot_guilds = response.json()
-
-    mutual_guilds = []
-    for user_guild in user_guilds:
-        for bot_guild in bot_guilds:
-            if (
-                user_guild["id"] == bot_guild["id"]
-                and (int(user_guild["permissions"]) & 0x00000020) == 0x00000020
-            ):
-                user_guild["icon"] = (
-                    "https://cdn.discordapp.com/icons/"
-                    + user_guild["id"]
-                    + "/"
-                    + user_guild["icon"]
-                    + ".png"
-                )
-                mutual_guilds.append(user_guild)
-
-    return mutual_guilds
+async def get_user_guilds(
+    pro: bool = False,
+    user: dict = Depends(checks.get_user_details),
+):
+    """
+    Get current user's mutual guilds with Quotient.
+    """
+    return await frequent.get_mutual_guilds(user["access_token"], pro=pro)
