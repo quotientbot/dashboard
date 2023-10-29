@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import {  Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { BellIcon } from '@heroicons/react/24/outline'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../state/actions/userSlice'
 
 
@@ -11,7 +10,8 @@ const DropDown = () => {
 
   const dispatch = useDispatch();
   const avatarUrl = localStorage.getItem("avatarUrl") ?? "https://cdn.discordapp.com/embed/avatars/2.png";
-  
+  const userInfo = useSelector((state)=>state.user.currentUser);
+  console.log(userInfo);
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -19,24 +19,15 @@ const DropDown = () => {
 
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button
-          type="button"
-          className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-        >
-          <span className="absolute -inset-1.5" />
-          <span className="sr-only">View notifications</span>
-          <BellIcon className="h-6 w-6" aria-hidden="true" />
-        </button>
         <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="relative flex items-center gap-2 tex-xl rounded-full bg-gray-800 text-sm">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src={avatarUrl}
-                        alt="https://cdn.discordapp.com/embed/avatars/2.png"
-                      />
+                      <div className="flex items-center p-2 gap-2">
+                        <img className="h-8 w-8 rounded-full" src={avatarUrl} alt="User Avatar" />
+                        <span className='text-[18px]'>{userInfo?.global_name}</span>
+                      </div>
                     </Menu.Button>
                   </div>
                   <Transition

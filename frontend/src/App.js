@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import PrivateRoute from "./components/Core/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
+import Servers from "./components/Core/Servers";
+import Premium from "./components/Core/Premium";
 
 
 function App() {
@@ -61,7 +63,10 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login />}/>
           <Route element={<PrivateRoute/>}>
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route element={<Dashboard/>}>
+              <Route path="/dashboard/" element={<Servers/>}/>
+              <Route path="/dashboard/premium" element={<Premium/>}/>
+            </Route>
           </Route>
         </Routes>
       </div>

@@ -3,7 +3,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import image from "../../Assets/favicon.png";
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
-import { useLocation } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import Commonbtn from '../Buttons/Commonbtn'
 
@@ -22,9 +21,6 @@ export default function Example() {
 
   const {token} = useSelector(state => state.user);
   
-  const location = useLocation();
-  const activeLink = location.pathname.split('/')[1];
-
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
