@@ -38,13 +38,13 @@ const Servers = () => {
         <div className="mt-10 bg-[#161616] p-5 rounded-lg">
             <div className="flex flex-col gap-1">
                 <span className="text-3xl font-bold">Servers</span>
-                <span className="text-xl">Server's you're in ( {guilds.length} servers )</span>
+                <span className="text-xl">Server's you're in ( {guilds !== null ? guilds.length : 0} servers )</span>
             </div>
             <div>
                 {
-                    guilds.map((item) => (
+                    guilds !== null && guilds.map((item) => (
                         <div key={item.id} className="flex flex-col inline items-center">
-                            <img src={`https://cdn.discordapp.com/icons/${item.id}/${item.icon}.png `} alt="ServerIcon" className="w-[200px] h-[200px]"/>
+                            <img src={item.icon} alt="ServerIcon" className="w-[200px] h-[200px]"/>
                             <div className="text-xl">{item.name}</div>
                         </div>
                     ))
