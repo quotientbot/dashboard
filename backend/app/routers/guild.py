@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends
-from typing import List
 
 from app.utils import checks, frequent
 from app.models import Guild, WebLog
@@ -9,25 +8,24 @@ router = APIRouter()
 
 
 @router.get("/{guild_id}")
-@cache(expire=30)
+@cache(expire=10)
 async def get_guild(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
 ):
     """
     Get details of a mutual guild.
     """
-    guilds: List[dict] = await frequent.get_mutual_guilds(user["access_token"], pro)
-    for guild in guilds:
-        if guild["id"] == guild_id:
-            record = await Guild.get_or_none(guild_id=guild_id)
-            if not record:
-                record = await Guild.create(guild_id=guild_id)
+    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
+    if not guild:
+        return None
 
-            # merge record & guild obj from discord API
-            guild.update(record.__dict__)
-            return guild
+    record = await Guild.get_or_none(guild_id=guild_id)
+    if not record:
+        record = await Guild.create(guild_id=guild_id)
 
-    return None
+    # merge record & guild obj from discord API
+    guild.update(record.__dict__)
+    return guild
 
 
 @router.get("/{guild_id}/logs")
@@ -38,10 +36,8 @@ async def get_guild_logs(
     """
     Get logs of a mutual guild.
     """
-    guilds: List[dict] = await frequent.get_mutual_guilds(user["access_token"], pro)
-    for guild in guilds:
-        if guild["id"] == guild_id:
-            logs = await WebLog.filter(user_id=guild_id).order_by("-created_at")
-            return logs
+    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
+    if not guild:
+        return None
 
-    return None
+    return await WebLog.filter(user_id=guild_id).order_by("-created_at")
