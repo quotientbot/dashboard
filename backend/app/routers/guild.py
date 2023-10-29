@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from typing import List
 
 from app.utils import checks, frequent
-from app.models import Guild
+from app.models import Guild, WebLog
 from fastapi_cache.decorator import cache
 
 router = APIRouter()
@@ -26,5 +26,22 @@ async def get_guild(
             # merge record & guild obj from discord API
             guild.update(record.__dict__)
             return guild
+
+    return None
+
+
+@router.get("/{guild_id}/logs")
+@cache(expire=10)
+async def get_guild_logs(
+    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+):
+    """
+    Get logs of a mutual guild.
+    """
+    guilds: List[dict] = await frequent.get_mutual_guilds(user["access_token"], pro)
+    for guild in guilds:
+        if guild["id"] == guild_id:
+            logs = await WebLog.filter(user_id=guild_id).order_by("-created_at")
+            return logs
 
     return None
