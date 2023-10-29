@@ -1,6 +1,6 @@
 from app import config
 from fastapi import FastAPI
-from .routers import oauth, user
+from .routers import oauth, user, guild
 from tortoise.contrib.fastapi import register_tortoise
 from starlette.middleware.cors import CORSMiddleware
 from fastapi_cache import FastAPICache
@@ -19,6 +19,7 @@ app.add_middleware(
 
 app.include_router(oauth.router, prefix="/oauth")
 app.include_router(user.router, prefix="/users")
+app.include_router(guild.router, prefix="/guilds")
 
 
 @app.get("/")
