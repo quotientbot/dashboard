@@ -1,8 +1,9 @@
-from fastapi import HTTPException, Header
-from app.models import WebAuth
-from app.config import DISCORD_API_ENDPOINT
 import httpx
+from fastapi import Header, HTTPException
 from fastapi_cache.decorator import cache
+
+from app.config import DISCORD_API_ENDPOINT
+from app.models import WebAuth
 
 
 @cache(expire=20)
@@ -20,9 +21,7 @@ async def get_user_details(token: str = Header(...)):
     # Retrieve user details from Discord using the token
     user_details = await retrieve_user_details_from_discord(user.access_token)
     if user_details is None:
-        raise HTTPException(
-            status_code=401, detail="Failed to fetch user details from Discord"
-        )
+        raise HTTPException(status_code=401, detail="Failed to fetch user details from Discord")
 
     return user_details
 

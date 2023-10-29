@@ -1,13 +1,14 @@
-from fastapi import APIRouter, Query, HTTPException, Response
-from pydantic import BaseModel
-from app.models import WebAuth
-from app import config
-import httpx
 import secrets
 from datetime import datetime, timedelta
-import pytz
-from fastapi_cache.decorator import cache
 
+import httpx
+import pytz
+from fastapi import APIRouter, HTTPException, Query
+from fastapi_cache.decorator import cache
+from pydantic import BaseModel
+
+from app import config
+from app.models import WebAuth
 
 router = APIRouter()
 

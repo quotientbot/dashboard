@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
-from app.utils import checks, frequent
-from fastapi_cache.decorator import cache
 
+from app.utils import checks, frequent
 
 router = APIRouter()
 

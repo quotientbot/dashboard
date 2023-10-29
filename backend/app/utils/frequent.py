@@ -1,12 +1,7 @@
 import httpx
-from app.config import (
-    DISCORD_API_ENDPOINT,
-    BOT_TOKEN,
-    PRO_BOT_TOKEN,
-    DEFAULT_ICON_URL,
-    DISCORD_CDN_ENDPOINT,
-)
 from fastapi_cache.decorator import cache
+
+from app.config import BOT_TOKEN, DEFAULT_ICON_URL, DISCORD_API_ENDPOINT, DISCORD_CDN_ENDPOINT, PRO_BOT_TOKEN
 
 
 @cache(expire=60)
@@ -64,21 +59,13 @@ async def get_mutual_guilds(access_token: str, pro: bool = False):
     mutual_guilds = []
     for user_guild in user_guilds:
         for bot_guild in bot_guilds:
-            if (
-                user_guild["id"] == bot_guild["id"]
-                and (int(user_guild["permissions"]) & 0x00000020) == 0x00000020
-            ):
+            if user_guild["id"] == bot_guild["id"] and (int(user_guild["permissions"]) & 0x00000020) == 0x00000020:
                 if user_guild["icon"] is None:
                     user_guild["icon"] = DEFAULT_ICON_URL
 
                 else:
                     user_guild["icon"] = (
-                        DISCORD_CDN_ENDPOINT
-                        + "/icons/"
-                        + user_guild["id"]
-                        + "/"
-                        + user_guild["icon"]
-                        + ".png"
+                        DISCORD_CDN_ENDPOINT + "/icons/" + user_guild["id"] + "/" + user_guild["icon"] + ".png"
                     )
                 mutual_guilds.append(user_guild)
 

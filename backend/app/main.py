@@ -1,10 +1,12 @@
-from app import config
 from fastapi import FastAPI
-from .routers import oauth, user, guild
-from tortoise.contrib.fastapi import register_tortoise
-from starlette.middleware.cors import CORSMiddleware
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
+from starlette.middleware.cors import CORSMiddleware
+from tortoise.contrib.fastapi import register_tortoise
+
+from app import config
+
+from .routers import guild, oauth, user
 
 app = FastAPI()
 
