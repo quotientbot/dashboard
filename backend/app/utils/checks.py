@@ -2,8 +2,10 @@ from fastapi import HTTPException, Header
 from app.models import WebAuth
 from app.config import DISCORD_API_ENDPOINT
 import httpx
+from fastapi_cache.decorator import cache
 
 
+@cache(expire=20)
 async def get_user_details(token: str = Header(...)):
     # Check if the user_token cookie exists
     if not token:
@@ -25,6 +27,7 @@ async def get_user_details(token: str = Header(...)):
     return user_details
 
 
+@cache(expire=60)
 async def retrieve_user_details_from_discord(user_token: str):
     discord_url = DISCORD_API_ENDPOINT + "/users/@me"
     headers = {

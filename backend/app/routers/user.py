@@ -7,7 +7,6 @@ router = APIRouter()
 
 
 @router.get("/@me")
-@cache(expire=60)
 async def me(user: dict = Depends(checks.get_user_details)):
     """
     Get current user's details.
@@ -16,7 +15,6 @@ async def me(user: dict = Depends(checks.get_user_details)):
 
 
 @router.get("/@me/guilds")
-@cache(expire=60)
 async def get_user_guilds(
     pro: bool = False,
     user: dict = Depends(checks.get_user_details),
