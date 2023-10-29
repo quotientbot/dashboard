@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
-import Commonbtn from '../components/core/Button'
+import Commonbtn from '../components/common/Button'
 import logo from "../assets/favicon.png"
-import Footer from '../components/core/Footer'
+import Footer from '../components/common/Footer'
 
 const Home = () => {
 
