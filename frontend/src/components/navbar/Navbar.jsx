@@ -4,7 +4,7 @@ import image from "../../assets/favicon.png";
 import { Link } from 'react-router-dom';
 import DropDown from './DropDown';
 import {useSelector} from 'react-redux';
-import Commonbtn from '../core/Button'
+import Commonbtn from '../common/Button'
 
 
 const navigation = [

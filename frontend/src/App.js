@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { userRequestStart, userRequestSuccess, userRequestFailure } from "./state/actions/userSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import PrivateRoute from "./components/core/PrivateRoute";
+import PrivateRoute from "./components/common/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import Servers from "./components/guildsMenu/Servers";
 import Premium from "./components/guildsMenu/Premium";
