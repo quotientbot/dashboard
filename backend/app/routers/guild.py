@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 
 from app.utils import checks, frequent
-from app.models import Guild, WebLog
+from app.models import Guild, WebLog, WebLog_Pydantic
 from fastapi_cache.decorator import cache
 
 router = APIRouter()
@@ -28,7 +28,7 @@ async def get_guild(
     return guild
 
 
-@router.get("/{guild_id}/logs")
+@router.get("/{guild_id}/logs", status_code=200, response_model=list[WebLog_Pydantic])
 @cache(expire=10)
 async def get_guild_logs(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
@@ -40,4 +40,6 @@ async def get_guild_logs(
     if not guild:
         return None
 
-    return await WebLog.filter(guild_id=guild_id).order_by("-created_at")
+    return await WebLog_Pydantic.from_queryset(
+        WebLog.filter(guild_id=guild_id).order_by("-created_at")
+    )

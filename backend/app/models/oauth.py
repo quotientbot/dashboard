@@ -1,7 +1,9 @@
 from tortoise import fields, models
 from enum import IntEnum
+from tortoise.contrib.pydantic import pydantic_model_creator
 
-__all__ = ("WebAuth", "WebLog", "WebLogType")
+
+__all__ = ("WebAuth", "WebLog", "WebLogType", "WebLog_Pydantic")
 
 
 class WebAuth(models.Model):
@@ -44,3 +46,6 @@ class WebLog(models.Model):
     action_type = fields.IntEnumField(WebLogType)
     action_msg = fields.CharField(max_length=255)
     created_at = fields.DatetimeField(auto_now=True)
+
+
+WebLog_Pydantic = pydantic_model_creator(WebLog)
