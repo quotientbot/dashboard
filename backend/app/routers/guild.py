@@ -28,7 +28,7 @@ async def get_guild(
     return guild
 
 
-@router.get("/{guild_id}/logs")
+@router.get("/{guild_id}/logs", response_model=list[WebLog])
 @cache(expire=10)
 async def get_guild_logs(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
@@ -40,4 +40,4 @@ async def get_guild_logs(
     if not guild:
         return None
 
-    return await WebLog.filter(user_id=guild_id).order_by("-created_at")
+    return await WebLog.filter(guild_id=guild_id).order_by("-created_at")

@@ -1,7 +1,7 @@
 from tortoise import fields, models
 from enum import IntEnum
 
-__all__ = ("WebAuth", "WebLog")
+__all__ = ("WebAuth", "WebLog", "WebLogType")
 
 
 class WebAuth(models.Model):
