@@ -28,7 +28,7 @@ async def get_guild(
     return guild
 
 
-@router.get("/{guild_id}/logs", response_model=list[WebLog])
+@router.get("/{guild_id}/logs")
 @cache(expire=10)
 async def get_guild_logs(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)

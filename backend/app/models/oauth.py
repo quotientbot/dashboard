@@ -39,6 +39,7 @@ class WebLog(models.Model):
 
     id = fields.IntField(pk=True)
     user_id = fields.BigIntField()
+    guild_id = fields.BigIntField()
     username = fields.CharField(max_length=255)
     action_type = fields.IntEnumField(WebLogType)
     action_msg = fields.CharField(max_length=255)
