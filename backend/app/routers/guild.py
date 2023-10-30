@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends
 
 from app.utils import checks, frequent
-from app.models import Guild, WebLog, WebLog_Pydantic
+from app.models import Guild, WebLog, WebLog_Pydantic, Guild_Pydantic
 from fastapi_cache.decorator import cache
 
 router = APIRouter()
 
 
-@router.get("/{guild_id}")
+@router.get("/{guild_id}", response_model=Guild_Pydantic)
 @cache(expire=10)
 async def get_guild(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
@@ -25,7 +25,7 @@ async def get_guild(
 
     # merge record & guild obj from discord API
     guild.update(record.__dict__)
-    return guild
+    return Guild_Pydantic(**guild)
 
 
 @router.get("/{guild_id}/logs", status_code=200, response_model=list[WebLog_Pydantic])
