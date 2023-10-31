@@ -1,13 +1,16 @@
 from fastapi import APIRouter, Depends
 from app.utils import checks
 from fastapi_cache.decorator import cache
+from app.models import Scrim
 
 router = APIRouter()
 
 
-@router.get("/{guild_id}")
+@router.get("/{guild_id}", response_model=list[Scrim])
 async def get_all_scrims(
-    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+    guild_id: str,
+    pro: bool = False,
+    user: dict = Depends(checks.get_user_details),
 ):
     """
     Get a list of all scrims in a guild (sorted by open time ascending)
@@ -15,7 +18,7 @@ async def get_all_scrims(
     ...
 
 
-@router.put("/{guild_id}")
+@router.put("/{guild_id}", response_model=Scrim)
 async def create_new_scrim(
     guild_id: str,
     pro: bool = False,
@@ -27,7 +30,7 @@ async def create_new_scrim(
     ...
 
 
-@router.patch("/{guild_id}/{scrim_id}")
+@router.patch("/{guild_id}/{scrim_id}", response_model=Scrim)
 async def update_scrim(
     guild_id: str,
     scrim_id: str,

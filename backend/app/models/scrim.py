@@ -2,6 +2,8 @@ from pydantic import BaseModel
 from datetime import datetime
 from enum import Enum
 
+__all__ = ("Day", "Scrim", "AutocleanType")
+
 
 class Day(Enum):
     monday = "monday"
