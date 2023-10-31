@@ -43,3 +43,33 @@ async def get_guild_logs(
     return await WebLog_Pydantic.from_queryset(
         WebLog.filter(guild_id=guild_id).order_by("-created_at")
     )
+
+
+@router.get("/{guild_id}/channels")
+@cache(expire=60)
+async def get_text_channels(
+    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+):
+    """
+    Get text channels of a mutual guild.
+    """
+    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
+    if not guild:
+        return None
+
+    return await frequent.get_text_channels(guild_id, pro)
+
+
+@router.get("/{guild_id}/roles")
+@cache(expire=60)
+async def get_guild_roles(
+    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+):
+    """
+    Get roles of a mutual guild.
+    """
+    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
+    if not guild:
+        return None
+
+    return await frequent.get_guild_roles(guild_id, pro)
