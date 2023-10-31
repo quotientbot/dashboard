@@ -1,7 +1,14 @@
 from fastapi import APIRouter, Depends
 
 from app.utils import checks, frequent
-from app.models import Guild, WebLog, WebLog_Pydantic, Guild_Pydantic
+from app.models import (
+    Guild,
+    WebLog,
+    WebLog_Pydantic,
+    Guild_Pydantic,
+    GuildRole_Pydantic,
+    TextChannel_Pydantic,
+)
 from fastapi_cache.decorator import cache
 
 router = APIRouter()

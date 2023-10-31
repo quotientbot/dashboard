@@ -2,7 +2,13 @@ from tortoise import fields, models
 from pydantic import BaseModel, validator
 from datetime import datetime
 
-__all__ = ("Guild", "Guild_Pydantic")
+__all__ = (
+    "Guild",
+    "Guild_Pydantic",
+    "GuildRole_Pydantic",
+    "TextChannel_Pydantic",
+    "PermissionOverwrite_Pydantic",
+)
 
 
 class Guild(models.Model):
@@ -33,3 +39,31 @@ class Guild_Pydantic(BaseModel):
     id: str
     name: str
     icon: str
+
+
+class PermissionOverwrite_Pydantic(BaseModel):
+    id: str
+    type: 0
+    allow: str
+    deny: str
+
+
+class GuildRole_Pydantic(BaseModel):
+    id: str
+    name: str
+    color: int
+    permissions: str
+    position: int
+    hoist: bool
+    managed: bool
+    mentionable: bool
+
+
+class TextChannel_Pydantic(BaseModel):
+    id: str
+    type: 0
+    name: str
+    parent_id: str
+    position: int
+    nsfw: bool
+    permission_overwrites: list[PermissionOverwrite_Pydantic]
