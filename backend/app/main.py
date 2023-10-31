@@ -6,7 +6,7 @@ from tortoise.contrib.fastapi import register_tortoise
 
 from app import config
 
-from .routers import guild, oauth, user
+from .routers import guild, oauth, user, scrim
 
 app = FastAPI()
 
@@ -22,6 +22,7 @@ app.add_middleware(
 app.include_router(oauth.router, prefix="/oauth")
 app.include_router(user.router, prefix="/users")
 app.include_router(guild.router, prefix="/guilds")
+app.include_router(scrim.router, prefix="/scrims")
 
 
 @app.get("/")
