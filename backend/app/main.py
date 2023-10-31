@@ -5,6 +5,7 @@ from starlette.middleware.cors import CORSMiddleware
 from tortoise.contrib.fastapi import register_tortoise
 
 from app import config
+from app.database.client import quotient_db, pro_db
 
 from .routers import guild, oauth, user, scrim
 
@@ -33,6 +34,12 @@ async def root():
 @app.on_event("startup")
 async def startup():
     FastAPICache.init(InMemoryBackend(), prefix="fastapi-cache")
+
+    print("Connecting to the databases...")
+    await quotient_db.connect()
+    await pro_db.connect()
+
+    print("Connection to the database successful...")
 
 
 register_tortoise(
