@@ -52,7 +52,7 @@ async def get_guild_logs(
     )
 
 
-@router.get("/{guild_id}/channels")
+@router.get("/{guild_id}/channels", response_model=list[TextChannel_Pydantic])
 @cache(expire=60)
 async def get_text_channels(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
@@ -67,7 +67,7 @@ async def get_text_channels(
     return await frequent.get_text_channels(guild_id, pro)
 
 
-@router.get("/{guild_id}/roles")
+@router.get("/{guild_id}/roles", response_model=list[GuildRole_Pydantic])
 @cache(expire=60)
 async def get_guild_roles(
     guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)

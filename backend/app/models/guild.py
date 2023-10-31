@@ -43,7 +43,7 @@ class Guild_Pydantic(BaseModel):
 
 class PermissionOverwrite_Pydantic(BaseModel):
     id: str
-    type: 0
+    type: int
     allow: str
     deny: str
 
@@ -61,7 +61,7 @@ class GuildRole_Pydantic(BaseModel):
 
 class TextChannel_Pydantic(BaseModel):
     id: str
-    type: 0
+    type: int
     name: str
     parent_id: str
     position: int
