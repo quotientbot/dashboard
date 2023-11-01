@@ -87,29 +87,6 @@ async def get_mutual_guilds(access_token: str, pro: bool = False):
 
 
 @cache(expire=60)
-async def get_mutual_guild(guild_id: str, access_token: str, pro: bool = False):
-    """
-    Get a user's mutual guild with Bot.
-
-    Parameters
-    ----------
-    guild_id : str
-        Guild ID.
-    access_token : str
-        User's access token.
-    pro : bool, optional
-        Whether to get mutual guilds with Quotient Pro or Quotient Basic, by default Quotient Basic.
-    """
-    guilds = await get_mutual_guilds(access_token, pro)
-
-    for guild in guilds:
-        if guild["id"] == guild_id:
-            return guild
-
-    return None
-
-
-@cache(expire=60)
 async def get_text_channels(guild_id: str, pro: bool = False):
     """
     Get a guild's text channels.

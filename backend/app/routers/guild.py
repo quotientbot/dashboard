@@ -16,19 +16,14 @@ router = APIRouter()
 
 @router.get("/{guild_id}", response_model=Guild_Pydantic)
 @cache(expire=10)
-async def get_guild(
-    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
-):
+async def get_guild(guild: dict = Depends(checks.get_mutual_guild)):
     """
     Get details of a mutual guild.
     """
-    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
-    if not guild:
-        return None
 
-    record = await Guild.get_or_none(guild_id=guild_id)
+    record = await Guild.get_or_none(guild_id=guild["id"])
     if not record:
-        record = await Guild.create(guild_id=guild_id)
+        record = await Guild.create(guild_id=guild["id"])
 
     # merge record & guild obj from discord API
     guild.update(record.__dict__)
@@ -37,46 +32,34 @@ async def get_guild(
 
 @router.get("/{guild_id}/logs", status_code=200, response_model=list[WebLog_Pydantic])
 @cache(expire=10)
-async def get_guild_logs(
-    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
-):
+async def get_guild_logs(guild: dict = Depends(checks.get_mutual_guild)):
     """
     Get logs of a mutual guild.
     """
-    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
-    if not guild:
-        return None
-
     return await WebLog_Pydantic.from_queryset(
-        WebLog.filter(guild_id=guild_id).order_by("-created_at")
+        WebLog.filter(guild_id=guild["id"]).order_by("-created_at")
     )
 
 
 @router.get("/{guild_id}/channels", response_model=list[TextChannel_Pydantic])
 @cache(expire=60)
 async def get_text_channels(
-    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+    pro: bool = False,
+    guild: dict = Depends(checks.get_mutual_guild),
 ):
     """
     Get text channels of a mutual guild.
     """
-    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
-    if not guild:
-        return None
-
-    return await frequent.get_text_channels(guild_id, pro)
+    return await frequent.get_text_channels(guild["id"], pro)
 
 
 @router.get("/{guild_id}/roles", response_model=list[GuildRole_Pydantic])
 @cache(expire=60)
 async def get_guild_roles(
-    guild_id: str, pro: bool = False, user: dict = Depends(checks.get_user_details)
+    pro: bool = False,
+    guild: dict = Depends(checks.get_mutual_guild),
 ):
     """
     Get roles of a mutual guild.
     """
-    guild: dict = await frequent.get_mutual_guild(guild_id, user["access_token"], pro)
-    if not guild:
-        return None
-
-    return await frequent.get_guild_roles(guild_id, pro)
+    return await frequent.get_guild_roles(guild["id"], pro)
