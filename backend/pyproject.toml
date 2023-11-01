@@ -14,6 +14,7 @@ asyncpg = "^0.28.0"
 python-decouple = "^3.8"
 httpx = "^0.25.0"
 fastapi-cache2 = "^0.2.1"
+aiocache = {extras = ["redis"], version = "^0.12.2"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
