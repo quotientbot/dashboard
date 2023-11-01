@@ -140,7 +140,7 @@ async def get_guild_roles(guild_id: str, pro: bool = False):
         if response.status_code != 200:
             raise Exception(response.json())
 
-    roles = roles.json()
+    roles = response.json()
     needed_roles = []
     for role in roles:
         if role["managed"] is False:
