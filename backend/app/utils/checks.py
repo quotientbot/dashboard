@@ -5,6 +5,7 @@ from fastapi import Header, HTTPException, Depends
 from fastapi_cache.decorator import cache
 
 from app.config import DISCORD_API_ENDPOINT
+from app.database.client import quotient_db, pro_db
 from app.models import WebAuth
 from .frequent import get_mutual_guilds
 
@@ -73,3 +74,15 @@ async def get_mutual_guild(
             return guild
 
     raise HTTPException(status_code=401, detail="Invalid Guild Requested.")
+
+
+def get_db(pro: bool = False):
+    """
+    Returns the database object based on the pro flag.
+
+    Parameters
+    ----------
+    pro : bool, optional
+        Whether to get the database object for Quotient Pro or Quotient Basic, by default Quotient Basic.
+    """
+    return pro_db.pool if pro else quotient_db.pool
