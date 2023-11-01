@@ -58,7 +58,7 @@ async def get_mutual_guilds(access_token: str, pro: bool = False):
     async with httpx.AsyncClient() as client:
         response = await client.get(discord_url, headers=headers)
         if response.status_code != 200:
-            return response.json()
+            raise Exception(response.json())
 
     bot_guilds = response.json()
 
@@ -130,7 +130,7 @@ async def get_text_channels(guild_id: str, pro: bool = False):
     async with httpx.AsyncClient() as client:
         response = await client.get(discord_url, headers=headers)
         if response.status_code != 200:
-            return response.json()
+            raise Exception(response.json())
 
     channels = response.json()
     text_channels = []
@@ -161,6 +161,12 @@ async def get_guild_roles(guild_id: str, pro: bool = False):
     async with httpx.AsyncClient() as client:
         response = await client.get(discord_url, headers=headers)
         if response.status_code != 200:
-            return response.json()
+            raise Exception(response.json())
 
-    return response.json()
+    roles = roles.json()
+    needed_roles = []
+    for role in roles:
+        if role["managed"] is False:
+            needed_roles.append(role)
+
+    return roles
