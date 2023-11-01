@@ -10,7 +10,9 @@ import PrivateRoute from "./components/common/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import Servers from "./components/guildsMenu/Servers";
 import Premium from "./components/guildsMenu/Premium";
-
+import ServerInfo from "./pages/ServerInfo";
+import ServerHome from "./components/Server Components/ServerHome";
+import Scrims  from "./components/Server Components/Scrims";
 
 function App() {
 
@@ -68,6 +70,12 @@ function App() {
             <Route element={<Dashboard/>}>
               <Route path="/dashboard/" element={<Servers/>}/>
               <Route path="/dashboard/premium" element={<Premium/>}/>
+            </Route>
+          </Route>
+          <Route element={<PrivateRoute/>}>
+            <Route element={<ServerInfo/>}>
+              <Route path="/dashboard/:Id/" element={<ServerHome/>}/>
+              <Route path="/dashboard/:Id/scrims" element={<Scrims/>}/>
             </Route>
           </Route>
         </Routes>

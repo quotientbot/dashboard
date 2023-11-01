@@ -15,3 +15,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+  width: 6px; /* Adjust the width of the scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #cdc5c5; 
+  border-radius: 6px;/* Background color of the track */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Background color of the thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+/* When the user hovers over the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the background color on hover */
+  border-radius: 6px;
+}

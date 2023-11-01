@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch , useSelector } from "react-redux";
 import {guildsFetchFailure , guildsFetchStart,guildsFetchSuccess} from "../../state/actions/guildsSlice";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Servers = () => {
     const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Servers = () => {
             }
           }      
         servers(token);
+        // console.log(guilds);
       // eslint-disable-next-line
     },[])
 
@@ -46,10 +48,10 @@ const Servers = () => {
             <div>
                 {
                     guilds !== null && guilds.map((item) => (
-                        <div key={item.id} className="flex flex-col inline items-center">
-                            <img src={item.icon} alt="ServerIcon" className="w-[200px] h-[200px]"/>
-                            <div className="text-xl">{item.name}</div>
-                        </div>
+                        <Link key={item.id} className="flex flex-col inline items-center" to={`/dashboard/${item.id}`}>
+                          <img src={item.icon} alt="ServerIcon" className="w-[200px] h-[200px]"/>
+                          <div className="text-xl">{item.name}</div>
+                        </Link>
                     ))
                 }
             </div>

@@ -11,7 +11,7 @@ const DropDown = () => {
   const dispatch = useDispatch();
   const avatarUrl = localStorage.getItem("avatarUrl") ?? "https://cdn.discordapp.com/embed/avatars/2.png";
   const userInfo = useSelector((state)=>state.user.currentUser);
-  console.log(userInfo);
+  // console.log(userInfo);
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
