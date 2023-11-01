@@ -2,15 +2,15 @@
 
 import httpx
 from fastapi import Header, HTTPException, Depends
-from fastapi_cache.decorator import cache
 
 from app.config import DISCORD_API_ENDPOINT
 from app.database.client import quotient_db, pro_db
 from app.models import WebAuth
 from .frequent import get_mutual_guilds
+from aiocache import cached, RedisCache
 
 
-@cache(expire=60)
+@cached(ttl=60, cache=RedisCache, endpoint="redis")
 async def retrieve_user_details_from_discord(user_token: str):
     discord_url = DISCORD_API_ENDPOINT + "/users/@me"
     headers = {
@@ -27,7 +27,7 @@ async def retrieve_user_details_from_discord(user_token: str):
     return res
 
 
-@cache(expire=20)
+@cached(ttl=20, cache=RedisCache, endpoint="redis")
 async def get_user_details(token: str = Header(...)):
     # Check if the token Header exists
     if not token:
@@ -49,7 +49,7 @@ async def get_user_details(token: str = Header(...)):
     return user_details
 
 
-@cache(expire=60)
+@cached(ttl=60, cache=RedisCache, endpoint="redis")
 async def get_mutual_guild(
     guild_id: str,
     pro: bool = False,

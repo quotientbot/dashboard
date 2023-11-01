@@ -21,16 +21,15 @@ async def get_all_scrims(
     )
 
 
-@router.put("/{guild_id}", response_model=Scrim)
+@router.put("/{guild_id}")
 async def create_new_scrim(
-    guild_id: str,
-    pro: bool = False,
-    user: dict = Depends(checks.get_user_details),
+    db: Pool = Depends(checks.get_db),
+    guild: dict = Depends(checks.get_mutual_guild),
 ):
     """
     Create a new Scrim.
     """
-    ...
+    return "okay"
 
 
 @router.patch("/{guild_id}/{scrim_id}", response_model=Scrim)
