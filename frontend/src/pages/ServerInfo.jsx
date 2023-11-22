@@ -3,9 +3,10 @@ import Sidebar from "../components/common/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const ServerInfo = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(true);
     return (
     <div className="flex gap-3">
-        <Sidebar/>
+        <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
         <Outlet/>
     </div>
 )}
