@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from app.utils import checks
 from fastapi_cache.decorator import cache
 from app.models import Scrim
@@ -23,13 +23,13 @@ async def get_all_scrims(
 
 @router.put("/{guild_id}")
 async def create_new_scrim(
+    scrim: Scrim,
     db: Pool = Depends(checks.get_db),
     guild: dict = Depends(checks.get_mutual_guild),
 ):
     """
     Create a new Scrim.
     """
-    return "okay"
 
 
 @router.patch("/{guild_id}/{scrim_id}", response_model=Scrim)

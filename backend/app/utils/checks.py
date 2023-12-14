@@ -10,7 +10,7 @@ from .frequent import get_mutual_guilds
 from aiocache import cached, RedisCache
 
 
-@cached(ttl=60, cache=RedisCache, endpoint="redis")
+@cached(ttl=300, cache=RedisCache, endpoint="redis")
 async def retrieve_user_details_from_discord(user_token: str):
     discord_url = DISCORD_API_ENDPOINT + "/users/@me"
     headers = {
@@ -27,7 +27,7 @@ async def retrieve_user_details_from_discord(user_token: str):
     return res
 
 
-@cached(ttl=20, cache=RedisCache, endpoint="redis")
+@cached(ttl=300, cache=RedisCache, endpoint="redis")
 async def get_user_details(token: str = Header(...)):
     # Check if the token Header exists
     if not token:
@@ -49,7 +49,7 @@ async def get_user_details(token: str = Header(...)):
     return user_details
 
 
-@cached(ttl=60, cache=RedisCache, endpoint="redis")
+@cached(ttl=300, cache=RedisCache, endpoint="redis")
 async def get_mutual_guild(
     guild_id: str,
     pro: bool = False,

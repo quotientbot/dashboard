@@ -10,13 +10,13 @@ services:
     environment:
       REDIS_HOST: redis # we will use this to connnect to redis
 
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
 
   redis:
     image: redis:7.2-alpine

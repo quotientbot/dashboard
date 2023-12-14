@@ -1,6 +1,10 @@
-from pydantic import BaseModel
-from datetime import datetime
+from pydantic import BaseModel, validator, Field
+from datetime import datetime, timedelta
+from app.constants import IST
 from enum import Enum
+from random import randint
+import dateparser
+
 
 __all__ = ("Day", "Scrim", "AutocleanType")
 
@@ -23,8 +27,8 @@ class AutocleanType(Enum):
 class Scrim(BaseModel):
     # mimics: https://github.com/quotientbot/Quotient-Bot/blob/8e08e9c808730838e2bdd5f45fd96c97a0c626c2/src/models/esports/scrims.py#L23
 
-    id: int
-    guild_id: int
+    id: int = None
+    guild_id: int = None
     name: str = "Quotient-Scrims"
     registration_channel_id: int
     slotlist_channel_id: int
@@ -34,14 +38,23 @@ class Scrim(BaseModel):
     start_from: int = 1
     available_slots: list[int] = []
     total_slots: int
-    host_id: int
+    host_id: int = None
 
     open_time: datetime
+
     opened_at: datetime = None
     closed_at: datetime = None
 
     autoclean: list[str] = [_.value for _ in AutocleanType]
-    autoclean_time: datetime = None
+    autoclean_time: datetime = Field(
+        default_factory=lambda: datetime.now(tz=IST).replace(
+            hour=randint(3, 6),
+            minute=randint(1, 60),
+            second=randint(1, 60),
+            microsecond=0,
+        )
+        + timedelta(days=1)
+    )
 
     autoslotlist: bool = True
     ping_role_id: int = None
@@ -68,3 +81,25 @@ class Scrim(BaseModel):
 
     required_lines: int = 0
     allow_duplicate_tags: bool = True
+
+    @staticmethod
+    def parse_dt(dt: str) -> datetime:
+        parsed = dateparser.parse(
+            dt,
+            settings={
+                "TIMEZONE": "Asia/Kolkata",
+                "RETURN_AS_TIMEZONE_AWARE": True,
+            },
+        )
+        while datetime.now(tz=IST) > parsed:
+            parsed += timedelta(hours=24)
+
+        return parsed
+
+    @validator("open_time", pre=True)
+    def transform_open_dt(cls: "Scrim", v: str) -> datetime:
+        return cls.parse_dt(v)
+
+    @validator("autoclean_time", pre=True)
+    def transform_autoclean_dt(cls: "Scrim", v: str) -> datetime:
+        return cls.parse_dt(v)
