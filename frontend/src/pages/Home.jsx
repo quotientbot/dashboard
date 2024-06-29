@@ -1,5 +1,6 @@
 import React from 'react'
 import Inner from '../components/layouts/Inner'
+import Hero from "../components/home/hero"
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div className="bg-black text-white min-h-[100vh] w-full">
 
       <Inner>
+        <Hero/>
       </Inner>
 
     </div>
