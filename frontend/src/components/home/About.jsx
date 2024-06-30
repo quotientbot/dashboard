@@ -25,8 +25,8 @@ const About = () => {
         <span className='text-[#06F5B6] font-bold'><Text> - deadshot#7999, Team Quotient</Text></span>
       </div>
 
-      <div className='lg:ml-[45%] ml-[30%] lg:mt-4'>
-        <BorderButton>Join Us</BorderButton>
+      <div className='lg:ml-[85%] ml-[30%] lg:mt-4'>
+        <BorderButton><a href="#" target='_blank'>Join Us</a></BorderButton>
       </div>
     </div>
   )

@@ -1,0 +1,52 @@
+.clip{
+   transition: all 0.3s ease-in-out;
+   overflow: hidden;
+   cursor: pointer;
+   
+}
+.clip:hover {
+    transform: scale(1.05);
+}
+
+.clip:hover > *:not(:hover) {
+    transform: scale(0.9);
+}
+
+.clip1{
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+.clip2{
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    perspective: 1000px;
+    cursor: pointer;
+}
+.clip3{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+.clip2 img{
+    scale : 0.8;
+    animation: rotate 5s infinite linear;
+}
+@keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+.clip3 img{
+    object-position: 0px -140px;
+}
+
+@media (max-width: 768px) {
+    .clip1, .clip2, .clip3 {
+      clip-path: none;
+      border-radius: 5px;
+    }
+    .clip2 img{
+        scale : 0.6;
+    }
+  }
