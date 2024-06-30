@@ -8,6 +8,7 @@ import Terms from "./pages/Terms"
 import PolicyP from "./pages/PolicyP"
 import { AnimatePresence } from "framer-motion"
 import SmoothScroll from "./components/layouts/SmoothScroll"
+import ErrorPage from "./pages/ErrorPage"
 
 function App() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} ></Route>
+            <Route path="*" element={<ErrorPage msg = {"Page Not Found"} />} ></Route>
             <Route path="/contact" element={<Contact />} ></Route>
             <Route path="/premium" element={<Premium />} ></Route>
             <Route path="/login" element={<Login />} ></Route>
