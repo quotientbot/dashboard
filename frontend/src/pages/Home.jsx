@@ -3,6 +3,7 @@ import Inner from '../components/layouts/Inner'
 import Hero from "../components/home/hero"
 import About from '../components/home/About'
 import Games from '../components/home/Games'
+import Footer from '../components/home/Footer'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Hero/>
         <About/>
         <Games/>
+        <Footer/>
       </Inner>
 
     </div>

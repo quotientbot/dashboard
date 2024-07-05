@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { NavLink } from 'react-router-dom'
 import BorderButton from '../components/layouts/BorderButton'
 import Text from '../components/layouts/Text'
+import Footer from '../components/home/Footer'
 
 
 const Contact = () => {
@@ -39,6 +40,11 @@ const Contact = () => {
             <BorderButton><a href="#" target='_blank'>Join Us</a></BorderButton>
           </div>
         </div>
+
+        <div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
+        <Footer/>
+      
+       
       </Inner>
     </div>
   )
