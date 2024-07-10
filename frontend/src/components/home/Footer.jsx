@@ -53,7 +53,7 @@ const Footer = ({delay}) => {
       </NavLink>
 
       <NavLink
-        to={"/*"}
+        to={"/terms"}
         className={({ isActive }) =>
           isActive
             ? "underline underline-offset-4 font-bold"
@@ -75,7 +75,7 @@ const Footer = ({delay}) => {
       </NavLink>
 
       <NavLink
-        to={"/contact"}
+        to={"/policy/refund"}
         className={({ isActive }) =>
           isActive
             ? "underline underline-offset-4 font-bold"
