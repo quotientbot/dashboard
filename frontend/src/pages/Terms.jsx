@@ -1,4 +1,10 @@
 import React from 'react'
+import NavBar from '../components/NavBar';
+import Inner from '../components/layouts/Inner';
+import logo from "../assets/logo192.png";
+import { motion } from "framer-motion";
+import { NavLink } from 'react-router-dom';
+import Footer from '../components/home/Footer';
 
 const Terms = () => {
   return (
@@ -19,15 +25,31 @@ const Terms = () => {
 
         <div className="pl-5 my-8">
           
-        <h1>Terms and Conditions</h1>
+        <h1 className="text-4xl font-bold text-[#06F5B6] underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
+        >
+          Terms and Conditions
+        </h1>
+
+        <style jsx>
+        {`
+          .custom-hover {
+            transition: transform 0.3s ease-in-out;
+          }
+          .custom-hover:hover {
+            transform: scale(1.1); /* Increase the scale on hover */
+          }
+        `}
+        </style>
+
+         
         <p>Last updated: 2021-04-29</p>
 
-        <h2>1. Introduction</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>1. Introduction</h2>
         <p>Welcome to Quotient (“Company”, “we”, “our”, “us”)!</p>
         <p>
           These Terms of Service (“Terms”, “Terms of Service”) govern your use of
-          our website located at <a href="https://quotientbot.xyz">https://quotientbot.xyz</a> 
-          (together or individually “Service”) operated by Quotient.
+          our website located at <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> 
+           (together or individually “Service”) operated by Quotient.
         </p>
         <p>
           Our Privacy Policy also governs your use of our Service and explains
@@ -42,21 +64,21 @@ const Terms = () => {
         <p>
           If you do not agree with (or cannot comply with) Agreements, then you
           may not use the Service, but please let us know by emailing at{" "}
-          <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a> so
+          <a href="mailto:support@quotientbot.xyz" style={{ color: 'blue' }}>support@quotientbot.xyz</a> so
           we can try to find a solution. These Terms apply to all visitors, users
           and others who wish to access or use Service.
         </p>
 
-        <h2>2. Communications</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>2. Communications</h2>
         <p>
           By using our Service, you agree to subscribe to newsletters, marketing
           or promotional materials and other information we may send. However, you
           may opt out of receiving any, or all, of these communications from us by
           following the unsubscribe link or by emailing at{" "}
-          <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a>.
+          <a href="mailto:support@quotientbot.xyz" style={{ color: 'blue' }}>support@quotientbot.xyz</a>.
         </p>
 
-        <h2>3. Purchases</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>3. Purchases</h2>
         <p>
           If you wish to purchase any product or service made available through
           Service (“Purchase”), you may be asked to supply certain information
@@ -65,9 +87,11 @@ const Terms = () => {
           address, and your shipping information.
         </p>
         <p>
-          You represent and warrant that: (i) you have the legal right to use any
+          You represent and warrant that:  <br>
+          </br> (i) you have the legal right to use any
           card(s) or other payment method(s) in connection with any Purchase; and
-          that (ii) the information you supply to us is true, correct and
+          that <br>
+          </br>  (ii) the information you supply to us is true, correct and
           complete.
         </p>
         <p>
@@ -87,7 +111,7 @@ const Terms = () => {
           unauthorized or illegal transaction is suspected.
         </p>
 
-        <h2>4. Contests, Sweepstakes and Promotions</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>4. Contests, Sweepstakes and Promotions</h2>
         <p>
           Any contests, sweepstakes or other promotions (collectively,
           “Promotions”) made available through Service may be governed by rules
@@ -97,10 +121,10 @@ const Terms = () => {
           Service, Promotion rules will apply.
         </p>
 
-        <h2>5. Refunds</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>5. Refunds</h2>
         <p>We issue refunds for Contracts within 0 days of the original purchase of the Contract.</p>
 
-        <h2>6. Content</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>6. Content</h2>
         <p>
           Content found on or through this Service are the property of Quotient or
           used with permission. You may not distribute, modify, transmit, reuse,
@@ -109,7 +133,7 @@ const Terms = () => {
           advance written permission from us.
         </p>
 
-        <h2>7. Prohibited Uses</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>7. Prohibited Uses</h2>
         <p>You may use Service only for lawful purposes and in accordance with Terms. You agree not to use Service:</p>
         <ul>
           <li>0.1. In any way that violates any applicable national or international law or regulation.</li>
@@ -119,8 +143,11 @@ const Terms = () => {
           <li>0.5. In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful, or in connection with any unlawful, illegal, fraudulent, or harmful purpose or activity.</li>
           <li>0.6. To engage in any other conduct that restricts or inhibits anyone’s use or enjoyment of Service, or which, as determined by us, may harm or offend Company or users of Service or expose them to liability.</li>
         </ul>
-        <p>Additionally, you agree not to:</p>
-        <ul>
+        <br>
+        </br> 
+        <p className='text-2xl  font-bold'>Additionally, you agree not to:</p>
+        <ul> <br> 
+        </br> 
           <li>0.1. Use Service in any manner that could disable, overburden, damage, or impair Service or interfere with any other party’s use of Service, including their ability to engage in real time activities through Service.</li>
           <li>0.2. Use any robot, spider, or other automatic device, process, or means to access Service for any purpose, including monitoring or copying any of the material on Service.</li>
           <li>0.3. Use any manual process to monitor or copy any of the material on Service or for any other unauthorized purpose without our prior written consent.</li>
@@ -132,32 +159,32 @@ const Terms = () => {
           <li>0.9. Otherwise attempt to interfere with the proper working of Service.</li>
         </ul>
 
-        <h2>8. Analytics</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>8. Analytics</h2>
         <p>We may use third-party Service Providers to monitor and analyze the use of our Service.</p>
 
-        <h2>9. No Use By Minors</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>9. No Use By Minors</h2>
         <p>
           Service is intended only for access and use by individuals at least eighteen (18) years old. By accessing or using Service, you warrant and represent that you are at least eighteen (18) years of age and with the full authority, right, and capacity to enter into this agreement and abide by all of the terms and conditions of Terms. If you are not at least eighteen (18) years old, you are prohibited from both the access and usage of Service.
         </p>
 
-        <h2>10. Intellectual Property</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>10. Intellectual Property</h2>
         <p>
           Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Quotient and its licensors. Service is protected by copyright, trademark, and other laws of and foreign countries. Our trademarks may not be used in connection with any product or service without the prior written consent of Quotient.
         </p>
 
-        <h2>11. Copyright Policy</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>11. Copyright Policy</h2>
         <p>
           We respect the intellectual property rights of others. It is our policy to respond to any claim that Content posted on Service infringes on the copyright or other intellectual property rights (“Infringement”) of any person or entity.
         </p>
         <p>
           If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been copied in a way that constitutes copyright infringement, please submit your claim via email to{" "}
-          <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a>, with the subject line: “Copyright Infringement” and include in your claim a detailed description of the alleged Infringement as detailed below, under “DMCA Notice and Procedure for Copyright Infringement Claims”
+          <a href="mailto:support@quotientbot.xyz" style={{ color: 'blue' }}>support@quotientbot.xyz</a>, with the subject line: “Copyright Infringement” and include in your claim a detailed description of the alleged Infringement as detailed below, under “DMCA Notice and Procedure for Copyright Infringement Claims”
         </p>
         <p>
           You may be held accountable for damages (including costs and attorneys’ fees) for misrepresentation or bad-faith claims on the infringement of any Content found on and/or through Service on your copyright.
         </p>
 
-        <h2>12. DMCA Notice and Procedure for Copyright Infringement Claims</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>12. DMCA Notice and Procedure for Copyright Infringement Claims</h2>
         <p>
           You may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3) for further detail):
         </p>
@@ -171,22 +198,27 @@ const Terms = () => {
         </ul>
         <p>
           You can contact our Copyright Agent via email at{" "}
-          <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a>.
+          <a href="mailto:support@quotientbot.xyz" style={{ color: 'blue' }}>support@quotientbot.xyz</a>.
         </p>
 
-        <h2>13. Error Reporting and Feedback</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>13. Error Reporting and Feedback</h2>
         <p>
-          You may provide us either directly at <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a> or via third party sites and tools with information and feedback concerning errors, suggestions for improvements, ideas, problems, complaints, and other matters related to our Service (“Feedback”). You acknowledge and agree that: (i) you shall not retain, acquire or assert any intellectual property right or other right, title or interest in or to the Feedback; (ii) Company may have development ideas similar to the Feedback; (iii) Feedback does not contain confidential information or proprietary information from you or any third party; and (iv) Company is not under any obligation of confidentiality with respect to the Feedback. In the event the transfer of the ownership to the Feedback is not possible due to applicable mandatory laws, you grant Company and its affiliates an exclusive, transferable, irrevocable, free-of-charge, sub-licensable, unlimited and perpetual right to use (including copy, modify, create derivative works, publish, distribute and commercialize) Feedback in any manner and for any purpose.
+          You may provide us either directly at <a href="mailto:support@quotientbot.xyz "style={{ color: 'blue' }}>support@quotientbot.xyz</a> or via third party sites and tools with information and feedback concerning errors, suggestions for improvements, ideas, problems, complaints, and other matters related to our Service (“Feedback”). You acknowledge and agree that:
+          <br>
+          </br> (i) you shall not retain, acquire or assert any intellectual property right or other right, title or interest in or to the Feedback; <br>
+          </br>  (ii) Company may have development ideas similar to the Feedback;  <br>
+          </br> (iii) Feedback does not contain confidential information or proprietary information from you or any third party; and  <br>
+          </br> (iv) Company is not under any obligation of confidentiality with respect to the Feedback. In the event the transfer of the ownership to the Feedback is not possible due to applicable mandatory laws, you grant Company and its affiliates an exclusive, transferable, irrevocable, free-of-charge, sub-licensable, unlimited and perpetual right to use (including copy, modify, create derivative works, publish, distribute and commercialize) Feedback in any manner and for any purpose.
         </p>
 
-        <h2>14. Links To Other Web Sites</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>14. Links To Other Web Sites</h2>
         <p>
           Our Service may contain links to third party web sites or services that are not owned or controlled by Quotient.
         </p>
         <p>
           Quotient has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.
         </p>
-        <p>
+        <p className="text-xl font-light">
           YOU ACKNOWLEDGE AND AGREE THAT COMPANY SHALL NOT BE RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY DAMAGE OR LOSS CAUSED OR ALLEGED TO BE CAUSED BY OR IN CONNECTION WITH USE OF OR RELIANCE ON ANY SUCH CONTENT, GOODS
           OR SERVICES AVAILABLE ON OR THROUGH ANY SUCH THIRD PARTY WEB SITES OR SERVICES.
         </p>
@@ -194,27 +226,27 @@ const Terms = () => {
           We strongly advise you to read the terms of service and privacy policies of any third party web sites or services that you visit.
         </p>
 
-        <h2>15. Disclaimer Of Warranty</h2>
-        <p>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>15. Disclaimer Of Warranty</h2>
+        <p className="text-xl font-light">
           THESE SERVICES ARE PROVIDED BY COMPANY ON AN “AS IS” AND “AS AVAILABLE” BASIS. COMPANY MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THEIR SERVICES, OR THE INFORMATION, CONTENT OR MATERIALS INCLUDED THEREIN. YOU EXPRESSLY AGREE THAT YOUR USE OF THESE SERVICES, THEIR CONTENT, AND ANY SERVICES OR ITEMS OBTAINED FROM US IS AT YOUR SOLE RISK.
         </p>
-        <p>
+        <p className="text-xl font-light">
           NEITHER COMPANY NOR ANY PERSON ASSOCIATED WITH COMPANY MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS
           , SECURITY, RELIABILITY, QUALITY, ACCURACY, OR AVAILABILITY OF THE SERVICES. WITHOUT LIMITING THE FOREGOING, NEITHER COMPANY NOR ANYONE ASSOCIATED WITH COMPANY REPRESENTS OR WARRANTS THAT THE SERVICES, THEIR CONTENT, OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE SERVICES WILL BE ACCURATE, RELIABLE, ERROR-FREE, OR UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, THAT THE SERVICES OR THE SERVER THAT MAKES IT AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS OR THAT THE SERVICES OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE SERVICES WILL OTHERWISE MEET YOUR NEEDS OR EXPECTATIONS.
         </p>
-        <p>
+        <p className="text-xl font-light">
           COMPANY HEREBY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR PARTICULAR PURPOSE.
         </p>
-        <p>
+        <p className="text-xl font-light">
           THE FOREGOING DOES NOT AFFECT ANY WARRANTIES WHICH CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.
         </p>
 
-        <h2>16. Limitation Of Liability</h2>
-        <p>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>16. Limitation Of Liability</h2>
+        <p className="text-xl font-light">
           EXCEPT AS PROHIBITED BY LAW, YOU WILL HOLD US AND OUR OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS HARMLESS FOR ANY INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGE, HOWEVER IT ARISES (INCLUDING ATTORNEYS’ FEES AND ALL RELATED COSTS AND EXPENSES OF LITIGATION AND ARBITRATION, OR AT TRIAL OR ON APPEAL, IF ANY, WHETHER OR NOT LITIGATION OR ARBITRATION IS INSTITUTED), WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, OR OTHER TORTIOUS ACTION, OR ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT, INCLUDING WITHOUT LIMITATION ANY CLAIM FOR PERSONAL INJURY OR PROPERTY DAMAGE, ARISING FROM THIS AGREEMENT AND ANY VIOLATION BY YOU OF ANY FEDERAL, STATE, OR LOCAL LAWS, STATUTES, RULES, OR REGULATIONS, EVEN IF COMPANY HAS BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. EXCEPT AS PROHIBITED BY LAW, IF THERE IS LIABILITY FOUND ON THE PART OF COMPANY, IT WILL BE LIMITED TO THE AMOUNT PAID FOR THE PRODUCTS AND/OR SERVICES, AND UNDER NO CIRCUMSTANCES WILL THERE BE CONSEQUENTIAL OR PUNITIVE DAMAGES. SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF PUNITIVE, INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE PRIOR LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU.
         </p>
 
-        <h2>17. Termination</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>17. Termination</h2>
         <p>
           We may terminate or suspend your account and bar access to Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of Terms.
         </p>
@@ -225,7 +257,7 @@ const Terms = () => {
           All provisions of Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
         </p>
 
-        <h2>18. Governing Law</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>18. Governing Law</h2>
         <p>
           These Terms shall be governed and construed in accordance with the laws of Discord, which governing law applies to agreement without regard to its conflict of law provisions.
         </p>
@@ -233,12 +265,12 @@ const Terms = () => {
           Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service and supersede and replace any prior agreements we might have had between us regarding Service.
         </p>
 
-        <h2>19. Changes To Service</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>19. Changes To Service</h2>
         <p>
           We reserve the right to withdraw or amend our Service, and any service or material we provide via Service, in our sole discretion without notice. We will not be liable if for any reason all or any part of Service is unavailable at any time or for any period. From time to time, we may restrict access to some parts of Service, or the entire Service, to users, including registered users.
         </p>
 
-        <h2>20. Amendments To Terms</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>20. Amendments To Terms</h2>
         <p>
           We may amend Terms at any time by posting the amended terms on this site. It is your responsibility to review these Terms periodically.
         </p>
@@ -249,7 +281,7 @@ const Terms = () => {
           By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use Service.
         </p>
 
-        <h2>21. Waiver And Severability</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>21. Waiver And Severability</h2>
         <p>
           No waiver by Company of any term or condition set forth in Terms shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure of Company to assert a right or provision under Terms shall not constitute a waiver of such right or provision.
         </p>
@@ -257,19 +289,21 @@ const Terms = () => {
           If any provision of Terms is held by a court or other tribunal of competent jurisdiction to be invalid, illegal or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent such that the remaining provisions of Terms will continue in full force and effect.
         </p>
 
-        <h2>22. Acknowledgement</h2>
-        <p>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>22. Acknowledgement</h2>
+        <p className="text-xl font-light">
           BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND AGREE TO BE BOUND BY THEM.
         </p>
 
-        <h2>23. Contact Us</h2>
+        <h2 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>23. Contact Us</h2>
         <p>
-          Please send your feedback, comments, requests for technical support by email: <a href="mailto:support@quotientbot.xyz">support@quotientbot.xyz</a>.
+          Please send your feedback, comments, requests for technical support by email: <a href="mailto:support@quotientbot.xyz" style={{ color: 'blue' }}>support@quotientbot.xyz</a>.
         </p>
 
         </div>
        </div>
       </div>
+
+      <div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
      <Footer />
     </Inner>
   </div>

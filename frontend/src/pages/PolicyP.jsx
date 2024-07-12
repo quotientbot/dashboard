@@ -25,14 +25,45 @@ const PolicyP = () => {
             
             <div className="pl-5 my-8">
               {/* <h1 style={{ textAlign: 'left' }}>Privacy</h1> */}
-              <h1 className='text-4xl  font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-center mb-8' style={{ textAlign: 'left' }}>Privacy Policy</h1>
-              <p>Effective date: December 18, 2020 Quotient HQ ("us", "we", or "our") operates the https://www.quotientbot.xyz website (hereinafter referred to as the "Service"). This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from https://www.quotientbot.xyz</p>
+              <h1
+                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
+              >
+                Privacy Policy
+              </h1>
 
-              <h1 className='text-4xl  font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-center mb-8 mt-6' style={{ textAlign: 'left' }}>Definitions</h1>
+              <style jsx>
+              {`
+                .custom-hover {
+                  transition: transform 0.3s ease-in-out;
+                }
+                .custom-hover:hover {
+                  transform: scale(1.1); /* Increase the scale on hover */
+                }
+              `}
+              </style>
+
+              <p>Effective date: December 18, 2020 Quotient HQ ("us", "we", or "our") operates the <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> website (hereinafter referred to as the "Service"). This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a></p>
+
+              <h1
+                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+              >
+                Definitions
+              </h1>
+
+              <style jsx>
+              {`
+                .custom-hover {
+                  transition: transform 0.3s ease-in-out;
+                }
+                .custom-hover:hover {
+                  transform: scale(1.1); /* Increase the scale on hover */
+                }
+              `}
+              </style>
               
               <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Service</h4>
               <ul style={{ textAlign: 'left' }}>
-                <li>Service is the <a href="https://www.quotientbot.xyz">https://www.quotientbot.xyz</a> website operated by Quotient HQ</li>
+                <li>Service is the <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> website operated by Quotient HQ</li>
               </ul>
               <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Personal Data</h4>
               <ul style={{ textAlign: 'left' }}>
@@ -60,7 +91,23 @@ const PolicyP = () => {
               </ul>
 
 
-              <h1 className='text-4xl  font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-center mb-8 mt-6 ' style={{ textAlign: 'left' }} > Information Collection and Use</h1>
+              <h1
+                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+              >
+                Information Collection and Use
+              </h1>
+
+              <style jsx>
+              {`
+                .custom-hover {
+                  transition: transform 0.3s ease-in-out;
+                }
+                .custom-hover:hover {
+                  transform: scale(1.1); /* Increase the scale on hover */
+                }
+              `}
+              </style>
+
               <p>We collect several different types of information for various purposes to provide and improve our Service to you. Types of Data Collected Personal Data While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you.</p>
 
 
@@ -87,40 +134,106 @@ const PolicyP = () => {
               <p className="mb-6">Quotient HQ uses the collected data for various purposes:</p>
               <ul className="space-y-4 list-none">
               <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To provide and maintain our Service
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To notify you about changes to our Service
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To allow you to participate in interactive features of our Service when you choose to do so
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To provide customer support
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To gather analysis or valuable information so that we can improve our Service
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To monitor the usage of our Service
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To detect, prevent and address technical issues
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information
-              </li>
+
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To provide and maintain our Service
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To notify you about changes to our Service
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To allow you to participate in interactive features of our Service when you choose to do so
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To provide customer support
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To gather analysis or valuable information so that we can improve our Service
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To monitor the usage of our Service
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To detect, prevent and address technical issues
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  To provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information
+                </div>
+              </div>
+            </li>
+
             </ul>
 
-              <h1 className='text-4xl  font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-center mb-8 mt-6 ' style={{ textAlign: 'left' }}>Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)</h1>
+            <h1
+              className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+            >
+              Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)
+            </h1>
+
+            <style jsx>
+            {`
+              .custom-hover {
+                transition: transform 0.3s ease-in-out;
+              }
+              .custom-hover:hover {
+                transform: scale(1.1); /* Increase the scale on hover */
+              }
+            `}
+            </style>
+
               <p>If you are from the European Economic Area (EEA), Quotient HQ legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Data we collect and the specific context in which we collect it.</p>
               <p className='mt-4'>Quotient HQ may process your Personal Data because:</p>
               <ul className="space-y-4 list-none">
@@ -197,29 +310,67 @@ const PolicyP = () => {
 
               <ul className="space-y-4  mt-2 list-none">
               <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right to access, update or delete the information we have on you. Whenever possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right of rectification. You have the right to have your information rectified if that information is inaccurate or incomplete.
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right to object. You have the right to object to our processing of your Personal Data.
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right of restriction. You have the right to request that we restrict the processing of your personal information.
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right to data portability. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The right to withdraw consent. You also have the right to withdraw your consent at any time where Quotient HQ relied on your consent to process your personal information.
-              </li>
+
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right to access, update or delete the information we have on you. Whenever possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right of rectification. You have the right to have your information rectified if that information is inaccurate or incomplete.
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right to object. You have the right to object to our processing of your Personal Data.
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right of restriction. You have the right to request that we restrict the processing of your personal information.
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right to data portability. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
+                </div>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex w-full">
+                <div className="w-3/10 flex items-center">
+                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+                </div>
+                <div className="w-7/10">
+                  The right to withdraw consent. You also have the right to withdraw your consent at any time where Quotient HQ relied on your consent to process your personal information.
+                </div>
+              </div>
+            </li>
+
             </ul>
 
 
