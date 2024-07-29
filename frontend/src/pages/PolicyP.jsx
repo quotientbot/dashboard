@@ -25,11 +25,15 @@ const PolicyP = () => {
             
             <div className="pl-5 my-8">
               {/* <h1 style={{ textAlign: 'left' }}>Privacy</h1> */}
-              <h1
+              <motion.h1
+                initial={{scale : 1}}
+                whileInView={{scale : 1.2}}
+                transition={{duration : 0.7 , ease : "easeIn"}}
+  
                 className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
               >
                 Privacy Policy
-              </h1>
+              </motion.h1>
 
               <style jsx>
               {`
@@ -44,11 +48,15 @@ const PolicyP = () => {
 
               <p>Effective date: December 18, 2020 Quotient HQ ("us", "we", or "our") operates the <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> website (hereinafter referred to as the "Service"). This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a></p>
 
-              <h1
+              <motion.h1
+                 initial={{scale : 1}}
+                 whileInView={{scale : 1.2}}
+                 transition={{duration : 0.7 , ease : "easeIn"}}
+  
                 className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
               >
                 Definitions
-              </h1>
+              </motion.h1>
 
               <style jsx>
               {`
@@ -91,11 +99,15 @@ const PolicyP = () => {
               </ul>
 
 
-              <h1
+              <motion.h1
+               initial={{scale : 1}}
+               whileInView={{scale : 1.2}}
+               transition={{duration : 0.7 , ease : "easeIn"}}
+
                 className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
               >
                 Information Collection and Use
-              </h1>
+              </motion.h1>
 
               <style jsx>
               {`
@@ -217,11 +229,14 @@ const PolicyP = () => {
 
             </ul>
 
-            <h1
+            <motion.h1
+             initial={{scale : 1}}
+             whileInView={{scale : 1.2}}
+             transition={{duration : 0.7 , ease : "easeIn"}}
               className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
             >
               Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)
-            </h1>
+            </motion.h1>
 
             <style jsx>
             {`
@@ -312,7 +327,7 @@ const PolicyP = () => {
               <li className="flex items-start">
 
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">
@@ -322,7 +337,7 @@ const PolicyP = () => {
             </li>
             <li className="flex items-start">
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">
@@ -332,7 +347,7 @@ const PolicyP = () => {
             </li>
             <li className="flex items-start">
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">
@@ -342,7 +357,7 @@ const PolicyP = () => {
             </li>
             <li className="flex items-start">
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">
@@ -352,7 +367,7 @@ const PolicyP = () => {
             </li>
             <li className="flex items-start">
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">
@@ -362,7 +377,7 @@ const PolicyP = () => {
             </li>
             <li className="flex items-start">
               <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
+                <div className="w-3/10 flex items-start">
                   <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
                 </div>
                 <div className="w-7/10">

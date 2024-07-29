@@ -25,10 +25,14 @@ const Terms = () => {
 
         <div className="pl-5 my-8">
           
-        <h1 className="text-4xl font-bold text-[#06F5B6] underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
+        <motion.h1 
+          initial={{scale : 1}}
+          animate={{scale : 1.2}}
+          transition={{duration : 0.7 , ease : "easeIn"}}
+          className="text-4xl font-bold text-[#06F5B6] underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
         >
           Terms and Conditions
-        </h1>
+        </motion.h1>
 
         <style jsx>
         {`
