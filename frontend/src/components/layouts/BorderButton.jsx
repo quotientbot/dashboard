@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const BorderButton = ({ children }) => {
+const BorderButton = ({  children }) => {
   return (
     <div className='realtive group'>
 
