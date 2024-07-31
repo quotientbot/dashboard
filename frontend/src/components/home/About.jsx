@@ -13,7 +13,7 @@ const About = () => {
       <div className='lg:mt-10 mt-3 lg:h-[65vh] h-[85vh] w-[80vw] ml-[10vw] text-justify lg:text-2xl'>
 
         <p className='lg:mb-7 mb-5 lg:leading-10'>Quotientbot.xyz represents <span className='text-[#06F5B6] font-bold'>Quotient</span>, a discord bot that helps Esports servers to manage and organize scrims, tournaments of different mobile/PC games. We dare say that Quotient is the first of its kind, open source, very powerful and multi functional discord bot. It is completely customizable and comes with close to no paywalls, Quotient was made with main aim to empower discord servers while maintaining the simplicity with about none paywalls and removing the need of a dozen of bots to do a simple work, well yes, we do have premium plans but that's for the heavy hosting bills we have to pay every month to provide best service to our
-          <span className='text-[#06F5B6] font-bold'> 10 million+ users </span> and<span className='text-[#06F5B6] font-bold'> 8,000+ discord servers.</span>
+          <span className='text-[#06F5B6] font-bold'> 20 million+ users </span> and<span className='text-[#06F5B6] font-bold'> 20,000+ discord servers.</span>
         </p>
 
         <Text>

@@ -8,7 +8,7 @@ import {easeIn, easeOut, motion } from "framer-motion"
 // gsap.registerPlugin(useGSAP);
 // gsap.registerPlugin(ScrollTrigger);
 
-const hero = () => {
+const Hero = () => {
 
   const paragraphs = [
     "A discord bot that helps",
@@ -112,4 +112,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero

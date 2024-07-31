@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar'
 import Inner from '../components/layouts/Inner'
 import { TfiCrown } from "react-icons/tfi";
 import Footer from '../components/home/Footer';
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import BorderButton from '../components/layouts/BorderButton';
 import Heading from '../components/layouts/Heading';
 
@@ -38,55 +38,63 @@ const Premium = () => {
   ];
   return (
 
-    <div className='bg-black text-white min-h-[100vh] w-full '>
+    <div className='bg-black text-white min-h-[100vh] w-full cursor-default'>
       <Inner>
         <NavBar />
         <div className=' min-h-[80vh] w-full my-[5vh]'>
-          <div className='lg:text-5xl text-3xl flex items-center justify-center gap-4'>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeIn", delay: 0.25 }}
+            className='lg:text-5xl text-3xl flex items-center justify-center gap-4'>
             <TfiCrown className='text-yellow-400' />
             <h1 className='uppercase font-extrabold tracking-wide'>Premium</h1>
-          </div>
-          <h1 className='uppercase font-extrabold text-center lg:text-3xl text-xl mt-3 px-6'>Take Your Server To The Next Level!</h1>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeIn", delay: 0.35 }}
+            className='uppercase font-extrabold text-center lg:text-3xl text-xl mt-3 px-6'>Take Your Server To The Next Level!</motion.h1>
 
           <table className='w-[70%] border-collapse mt-[5vh] mx-auto '>
-          <thead>
-            <tr className='text-[#06F5B6] font-extrabold lg:text-base text-[2.5vw]'>
-              <th className='border p-2'>Feature</th>
-              <th className='border p-2'>FREE</th>
-              <th className='border p-2'>STARTER</th>
-              <th className='border p-2'>INTERMEDIATE</th>
-              <th className='border p-2'>ULTIMATE</th>
-            </tr>
-          </thead>
-          <tbody>
-            {plans.map((plan, index) => (
-              <motion.tr
-                initial={{opacity : 0, y : 20}}
-                animate={{opacity : 1, y : 0}}
-                transition={{duration : 0.5, ease : "easeIn", delay : 0.15*index}}
-                key={index}>
-                <td className='border p-2  font-bold lg:text-base text-[3vw]'>{plan.feature}</td>
-                <td className='border p-2 text-center'>{plan.free}</td>
-                <td className='border p-2 text-center'>{plan.starter}</td>
-                <td className='border p-2 text-center'>{plan.intermediate}</td>
-                <td className='border p-2 text-center'>{plan.ultimate}</td>
-              </motion.tr>
-            ))}
-          </tbody>
-          <tr className='text-[#06F5B6] font-extrabold lg:text-base text-[3.5vw]'>
+            <thead>
+              <tr className='text-[#06F5B6] font-extrabold lg:text-base text-[2.5vw]'>
+                <th className='border p-2'>Feature</th>
+                <th className='border p-2'>FREE</th>
+                <th className='border p-2'>STARTER</th>
+                <th className='border p-2'>INTERMEDIATE</th>
+                <th className='border p-2'>ULTIMATE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {plans.map((plan, index) => (
+                <motion.tr
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeIn", delay: 0.15 * index }}
+                  key={index}>
+                  <td className='border p-2  font-bold lg:text-base text-[3vw]'>{plan.feature}</td>
+                  <td className='border p-2 text-center'>{plan.free}</td>
+                  <td className='border p-2 text-center'>{plan.starter}</td>
+                  <td className='border p-2 text-center'>{plan.intermediate}</td>
+                  <td className='border p-2 text-center'>{plan.ultimate}</td>
+                </motion.tr>
+              ))}
+            </tbody>
+            <tr className='text-[#06F5B6] font-extrabold lg:text-base text-[3.5vw]'>
               <th className='border p-2'>Price / Month</th>
               <th className='border p-2'>-</th>
               <th className='border p-2'>₹99</th>
               <th className='border p-2'>₹139</th>
               <th className='border p-2'>₹159</th>
             </tr>
-        </table>
+          </table>
         </div>
-        <div className='lg:ml-[75%] ml-[35%] mt-6 lg:mt-10 h-[10vh] '>
-             <BorderButton bigger={true}><a href="#" target='_blank'>Premium</a></BorderButton>
-             </div>
+        <div className='lg:ml-[70%] ml-[30%] mt-6 lg:mt-10 h-[10vh] '>
+          <BorderButton bigger={true}><a href="#" target='_blank'>Go Premium</a></BorderButton>
+        </div>
         <div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
-        <Footer/>
+        <Footer />
       </Inner>
     </div>
   )

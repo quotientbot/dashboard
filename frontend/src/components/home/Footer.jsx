@@ -75,7 +75,7 @@ const Footer = ({delay}) => {
       </NavLink>
 
       <NavLink
-        to={"/policy/refund"}
+        to={"/refund"}
         className={({ isActive }) =>
           isActive
             ? "underline underline-offset-4 font-bold"

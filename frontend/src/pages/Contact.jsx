@@ -22,7 +22,7 @@ const Contact = () => {
           <NavBar />
         </div>
 
-        <div className='flex-grow overflow-y-auto'>
+        <div className='flex-grow overflow-y-auto h-[75vh]'>
           <div className='h-auto w-[80vw] ml-[10vw] lg:mt-[15vh] mt-4 lg:text-2xl cursor-default text-xl text-justify'>
             
             <div className="pl-5 my-8">
@@ -58,32 +58,3 @@ const Contact = () => {
 
 export default Contact
 
-{/* 
-        <div className='h-[90vh] lg:h-[60vh] w-[80vw] ml-[10vw] lg:mt-[15vh] mt-4 lg:text-2xl cursor-default text-xl text-justify'>
-          <h1 className='text-4xl font-bold tracking-wide text-center mb-8'>Welcome to our Support Page!</h1>
-          <div className="pl-5 my-8">
-            <Text>
-              We are dedicated to providing you with the best possible assistance for any issues you may encounter. Our primary channel for support is via Discord, where our team of knowledgeable and friendly support staff is ready to help you with any type of problem.
-            </Text>
-            <Text>
-              Whether you need help with technical issues, have questions about our services, or need assistance with your account, we are here to ensure you get the support you need.
-            </Text>
-            <Text>
-              For any type of problem, connect with us via Discord. We are here to assist you and ensure you have the best experience possible.
-            </Text>
-          </div>
-          <div className='lg:ml-[45%] ml-[25%] mt-6 lg:mt-10'>
-            <BorderButton><a href="#" target='_blank'>Join Us</a></BorderButton>
-          </div>
-        </div>
-
-        <div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
-        <Footer/>
-      
-       
-      </Inner>
-    </div>
-  )
-}
-
-export default Contact */}

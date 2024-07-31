@@ -28,14 +28,14 @@
     scale : 0.8;
     animation: rotate 5s infinite linear;
 }
-@keyframes rotate {
+/* @keyframes rotate {
     from {
       transform: rotateY(0deg);
     }
     to {
       transform: rotateY(360deg);
     }
-  }
+  } */
 
 .clip3 img{
     object-position: 0px -140px;

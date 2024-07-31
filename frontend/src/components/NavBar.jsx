@@ -36,11 +36,11 @@ const NavBar = ({delay}) => {
                     : "hover:underline underline-offset-4"
             } >Vote</NavLink> */}
 
-            <NavLink to={"/login"} className={({ isActive }) =>
+            <NavLink to={"/github"} className={({ isActive }) =>
                 isActive
                     ? "underline underline-offset-4 font-bold"
                     : "hover:underline underline-offset-4"
-            } >Login</NavLink>
+            } >Github</NavLink>
             
         </motion.div>
     )
