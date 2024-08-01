@@ -6,3 +6,8 @@ body::-webkit-scrollbar{
     display: none;
     scroll-behavior: smooth;
 }
+
+.contributor-box::-webkit-scrollbar{
+    display: none;
+    scroll-behavior: smooth;   
+}

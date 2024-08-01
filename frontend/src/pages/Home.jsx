@@ -3,7 +3,7 @@ import Inner from '../components/layouts/Inner'
 import About from '../components/home/About'
 import Games from '../components/home/Games'
 import Footer from '../components/home/Footer'
-import Hero from '../components/home/hero'
+import Hero from '../components/home/Hero'
 
 const Home = () => {
   return (
