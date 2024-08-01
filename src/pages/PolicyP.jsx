@@ -1,442 +1,744 @@
-import React from 'react';
-import NavBar from '../components/NavBar';
-import Inner from '../components/layouts/Inner';
+import NavBar from "../components/NavBar";
+import Inner from "../components/layouts/Inner";
 import logo from "../assets/logo192.png";
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom';
-import Footer from '../components/home/Footer';
-import { FaArrowRight } from 'react-icons/fa';
+import { NavLink } from "react-router-dom";
+import Footer from "../components/home/Footer";
+import { FaArrowRight } from "react-icons/fa";
 
 const PolicyP = () => {
-  return (
-    <div className="bg-black text-white min-h-screen w-full flex flex-col">
-      <Inner>
-        <div className='flex mt-1'>
-          <motion.div initial={{ x: "-20vw" }} animate={{ x: 0 }} transition={{ duration: 1 }} className='lg:w-[10vw] w-[20vw] lg:h-[7vh] flex justify-center items-center'>
-            <NavLink to={"/"}>
-              <img src={logo} alt="Logo" className='logo-animation lg:scale-[0.4] scale-[0.7]' />
-            </NavLink>
-          </motion.div>
-          <NavBar />
-        </div>
+	return (
+		<div className="bg-black text-white min-h-screen w-full flex flex-col">
+			<Inner>
+				<div className="flex mt-1">
+					<motion.div
+						initial={{ x: "-20vw" }}
+						animate={{ x: 0 }}
+						transition={{ duration: 1 }}
+						className="lg:w-[10vw] w-[20vw] lg:h-[7vh] flex justify-center items-center"
+					>
+						<NavLink to={"/"}>
+							<img src={logo} alt="Logo" className="logo-animation lg:scale-[0.4] scale-[0.7]" />
+						</NavLink>
+					</motion.div>
+					<NavBar />
+				</div>
 
-        <div className='flex-grow overflow-y-auto'>
-          <div className='h-auto w-[80vw] ml-[10vw] lg:mt-[15vh] mt-4 lg:text-2xl cursor-default text-xl text-justify'>
-            
-            <div className="pl-5 my-8">
-              {/* <h1 style={{ textAlign: 'left' }}>Privacy</h1> */}
-              <motion.h1
-                initial={{scale : 1}}
-                whileInView={{scale : 1.2}}
-                transition={{duration : 0.7 , ease : "easeIn"}}
-  
-                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
-              >
-                Privacy Policy
-              </motion.h1>
+				<div className="flex-grow overflow-y-auto">
+					<div className="h-auto w-[80vw] ml-[10vw] lg:mt-[15vh] mt-4 lg:text-2xl cursor-default text-xl text-justify">
+						<div className="pl-5 my-8">
+							{/* <h1 style={{ textAlign: 'left' }}>Privacy</h1> */}
+							<motion.h1
+								initial={{ scale: 1 }}
+								whileInView={{ scale: 1.2 }}
+								transition={{ duration: 0.7, ease: "easeIn" }}
+								className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 custom-hover"
+							>
+								Privacy Policy
+							</motion.h1>
 
-              <style jsx>
-              {`
-                .custom-hover {
-                  transition: transform 0.3s ease-in-out;
-                }
-                .custom-hover:hover {
-                  transform: scale(1.1); /* Increase the scale on hover */
-                }
-              `}
-              </style>
+							<style jsx>
+								{`
+									.custom-hover {
+										transition: transform 0.3s ease-in-out;
+									}
+									.custom-hover:hover {
+										transform: scale(1.1); /* Increase the scale on hover */
+									}
+								`}
+							</style>
 
-              <p>Effective date: December 18, 2020 Quotient HQ ("us", "we", or "our") operates the <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> website (hereinafter referred to as the "Service"). This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a></p>
+							<p>
+								Effective date: December 18, 2020 Quotient HQ ("us", "we", or "our") operates the{" "}
+								<a href="https://quotientbot.xyz" style={{ color: "blue" }}>
+									https://quotientbot.xyz
+								</a>{" "}
+								website (hereinafter referred to as the "Service"). This page informs you of our policies
+								regarding the collection, use and disclosure of personal data when you use our Service and
+								the choices you have associated with that data. We use your data to provide and improve
+								the Service. By using the Service, you agree to the collection and use of information in
+								accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms
+								used in this Privacy Policy have the same meanings as in our Terms and Conditions,
+								accessible from{" "}
+								<a href="https://quotientbot.xyz" style={{ color: "blue" }}>
+									https://quotientbot.xyz
+								</a>
+							</p>
 
-              <motion.h1
-                 initial={{scale : 1}}
-                 whileInView={{scale : 1.2}}
-                 transition={{duration : 0.7 , ease : "easeIn"}}
-  
-                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
-              >
-                Definitions
-              </motion.h1>
+							<motion.h1
+								initial={{ scale: 1 }}
+								whileInView={{ scale: 1.2 }}
+								transition={{ duration: 0.7, ease: "easeIn" }}
+								className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+							>
+								Definitions
+							</motion.h1>
 
-              <style jsx>
-              {`
-                .custom-hover {
-                  transition: transform 0.3s ease-in-out;
-                }
-                .custom-hover:hover {
-                  transform: scale(1.1); /* Increase the scale on hover */
-                }
-              `}
-              </style>
-              
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Service</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Service is the <a href="https://quotientbot.xyz" style={{ color: 'blue' }}>https://quotientbot.xyz</a> website operated by Quotient HQ</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Personal Data</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Usage Data</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Usage Data is data collected automatically either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Cookies</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Cookies are small files stored on your device (computer or mobile device).</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Data Controller</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Data Controller means the natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal information are, or are to be, processed. For the purpose of this Privacy Policy, we are a Data Controller of your Personal Data.</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Data Processors (or Service Providers)</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Data Processor (or Service Provider) means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.</li>
-              </ul>
-              <h4 className='text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6' style={{ textAlign: 'left' }}>Data Subject (or User)</h4>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Data Subject is any living individual who is using our Service and is the subject of Personal Data.</li>
-              </ul>
+							<style jsx>
+								{`
+									.custom-hover {
+										transition: transform 0.3s ease-in-out;
+									}
+									.custom-hover:hover {
+										transform: scale(1.1); /* Increase the scale on hover */
+									}
+								`}
+							</style>
 
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Service
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Service is the{" "}
+									<a href="https://quotientbot.xyz" style={{ color: "blue" }}>
+										https://quotientbot.xyz
+									</a>{" "}
+									website operated by Quotient HQ
+								</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Personal Data
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Personal Data means data about a living individual who can be identified from those
+									data (or from those and other information either in our possession or likely to come
+									into our possession).
+								</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Usage Data
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Usage Data is data collected automatically either generated by the use of the Service
+									or from the Service infrastructure itself (for example, the duration of a page visit).
+								</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Cookies
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>Cookies are small files stored on your device (computer or mobile device).</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Data Controller
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Data Controller means the natural or legal person who (either alone or jointly or in
+									common with other persons) determines the purposes for which and the manner in which
+									any personal information are, or are to be, processed. For the purpose of this Privacy
+									Policy, we are a Data Controller of your Personal Data.
+								</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Data Processors (or Service Providers)
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Data Processor (or Service Provider) means any natural or legal person who processes
+									the data on behalf of the Data Controller. We may use the services of various Service
+									Providers in order to process your data more effectively.
+								</li>
+							</ul>
+							<h4
+								className="text-2xl  font-bold  hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-6"
+								style={{ textAlign: "left" }}
+							>
+								Data Subject (or User)
+							</h4>
+							<ul style={{ textAlign: "left" }}>
+								<li>
+									Data Subject is any living individual who is using our Service and is the subject of
+									Personal Data.
+								</li>
+							</ul>
 
-              <motion.h1
-               initial={{scale : 1}}
-               whileInView={{scale : 1.2}}
-               transition={{duration : 0.7 , ease : "easeIn"}}
+							<motion.h1
+								initial={{ scale: 1 }}
+								whileInView={{ scale: 1.2 }}
+								transition={{ duration: 0.7, ease: "easeIn" }}
+								className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+							>
+								Information Collection and Use
+							</motion.h1>
 
-                className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
-              >
-                Information Collection and Use
-              </motion.h1>
+							<style jsx>
+								{`
+									.custom-hover {
+										transition: transform 0.3s ease-in-out;
+									}
+									.custom-hover:hover {
+										transform: scale(1.1); /* Increase the scale on hover */
+									}
+								`}
+							</style>
 
-              <style jsx>
-              {`
-                .custom-hover {
-                  transition: transform 0.3s ease-in-out;
-                }
-                .custom-hover:hover {
-                  transform: scale(1.1); /* Increase the scale on hover */
-                }
-              `}
-              </style>
+							<p>
+								We collect several different types of information for various purposes to provide and
+								improve our Service to you. Types of Data Collected Personal Data While using our Service,
+								we may ask you to provide us with certain personally identifiable information that can be
+								used to contact or identify you.
+							</p>
 
-              <p>We collect several different types of information for various purposes to provide and improve our Service to you. Types of Data Collected Personal Data While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you.</p>
+							<h1
+								className="text-4xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Personal Data
+							</h1>
+							<p>Personally identifiable information may include, but is not limited to:</p>
+							<ul style={{ textAlign: "left" }}>
+								<li
+									className="text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2"
+									style={{ textAlign: "left" }}
+								>
+									Email address
+								</li>
+								<li
+									className="text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2"
+									style={{ textAlign: "left" }}
+								>
+									Your IP Address
+								</li>
+								<li
+									className="text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2"
+									style={{ textAlign: "left" }}
+								>
+									Cookies and Usage Data
+								</li>
+							</ul>
+							<p>
+								We may use your Personal Data to contact you with newsletters, marketing or promotional
+								materials and other information that may be of interest to you.
+							</p>
+							<p>
+								You may opt out of receiving any, or all, of these communications from us by contacting
+								us. Usage Data We may also collect information on how the Service is accessed and used
+								("Usage Data"). This Usage Data may include information such as your computer's Internet
+								Protocol address (e.g. IP address), browser type, browser version, the pages of our
+								Service that you visit, the time and date of your visit, the time spent on those pages,
+								unique device identifiers and other diagnostic data. This is all stored by google, and not
+								us. We may use email addresses in the future, only to send registered users emails about
+								our service.
+							</p>
 
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Tracking & Cookies
+							</h1>
+							<p>
+								Data We use cookies and similar tracking technologies to track the activity on our Service
+								and we hold certain information. Cookies are files with a small amount of data which may
+								include an anonymous unique identifier. Cookies are sent to your browser from a website
+								and stored on your device. Other tracking technologies are also used such as beacons, tags
+								and scripts to collect and track information and to improve and analyse our Service. You
+								can instruct your browser to refuse all cookies or to indicate when a cookie is being
+								sent. However, if you do not accept cookies, you may not be able to use some portions of
+								our Service.
+							</p>
 
-              <h1 className='text-4xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }}>Personal Data</h1>
-              <p>Personally identifiable information may include, but is not limited to:</p>
-              <ul style={{ textAlign: 'left' }}>
-                <li className='text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2' style={{ textAlign: 'left' }} >Email address</li>
-                <li className='text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2' style={{ textAlign: 'left' }} >Your IP Address</li>
-                <li className='text-2xl hover:underline underline-offset-4 relative group tracking-wide text-center mb-2 mt-2' style={{ textAlign: 'left' }} >Cookies and Usage Data</li>
-              </ul>
-              <p>We may use your Personal Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you.</p>
-              <p>You may opt out of receiving any, or all, of these communications from us by contacting us. Usage Data We may also collect information on how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data. This is all stored by google, and not us. We may use email addresses in the future, only to send registered users emails about our service.</p>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Tracking & Cookies Data
+							</h1>
+							<p>
+								We use cookies and similar tracking technologies to track the activity on our Service and
+								we hold certain information. Cookies are files with a small amount of data which may
+								include an anonymous unique identifier. Cookies are sent to your browser from a website
+								and stored on your device. Other tracking technologies are also used such as beacons, tags
+								and scripts to collect and track information and to improve and analyse our Service. You
+								can instruct your browser to refuse all cookies or to indicate when a cookie is being
+								sent. However, if you do not accept cookies, you may not be able to use some portions of
+								our Service.
+							</p>
 
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Use of Data
+							</h1>
+							<p className="mb-6">Quotient HQ uses the collected data for various purposes:</p>
+							<ul className="space-y-4 list-none">
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">To provide and maintain our Service</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">To notify you about changes to our Service</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											To allow you to participate in interactive features of our Service when you
+											choose to do so
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">To provide customer support</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											To gather analysis or valuable information so that we can improve our Service
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">To monitor the usage of our Service</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">To detect, prevent and address technical issues</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-center">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											To provide you with news, special offers and general information about other
+											goods, services and events which we offer that are similar to those that you
+											have already purchased or enquired about unless you have opted not to receive
+											such information
+										</div>
+									</div>
+								</li>
+							</ul>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Tracking & Cookies</h1>
-              <p>Data We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyse our Service. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+							<motion.h1
+								initial={{ scale: 1 }}
+								whileInView={{ scale: 1.2 }}
+								transition={{ duration: 0.7, ease: "easeIn" }}
+								className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
+							>
+								Legal Basis for Processing Personal Data under the General Data Protection Regulation
+								(GDPR)
+							</motion.h1>
 
+							<style jsx>
+								{`
+									.custom-hover {
+										transition: transform 0.3s ease-in-out;
+									}
+									.custom-hover:hover {
+										transform: scale(1.1); /* Increase the scale on hover */
+									}
+								`}
+							</style>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Tracking & Cookies Data</h1>
-              <p>We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyse our Service. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+							<p>
+								If you are from the European Economic Area (EEA), Quotient HQ legal basis for collecting
+								and using the personal information described in this Privacy Policy depends on the
+								Personal Data we collect and the specific context in which we collect it.
+							</p>
+							<p className="mt-4">Quotient HQ may process your Personal Data because:</p>
+							<ul className="space-y-4 list-none">
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									We need to perform a contract with you
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									You have given us permission to do so
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									The processing is in our legitimate interests and it is not overridden by your rights
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									For payment processing purposes
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To comply with the law
+								</li>
+							</ul>
 
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Retention of Data
+							</h1>
+							<p>
+								Quotient HQ will retain your Personal Data only for as long as is necessary for the
+								purposes set out in this Privacy Policy. We will retain and use your Personal Data to the
+								extent necessary to comply with our legal obligations (for example, if we are required to
+								retain your data to comply with applicable laws), resolve disputes and enforce our legal
+								agreements and policies.
+							</p>
+							<p className="mt-3">
+								Quotient HQ will also retain Usage Data for internal analysis purposes. Usage Data is
+								generally retained for a shorter period of time, except when this data is used to
+								strengthen the security or to improve the functionality of our Service, or we are legally
+								obligated to retain this data for longer periods.
+							</p>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Use of Data</h1>
-              <p className="mb-6">Quotient HQ uses the collected data for various purposes:</p>
-              <ul className="space-y-4 list-none">
-              <li className="flex items-start">
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Transfer of Data
+							</h1>
 
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To provide and maintain our Service
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To notify you about changes to our Service
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To allow you to participate in interactive features of our Service when you choose to do so
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To provide customer support
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To gather analysis or valuable information so that we can improve our Service
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To monitor the usage of our Service
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To detect, prevent and address technical issues
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-center">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  To provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information
-                </div>
-              </div>
-            </li>
+							<p>
+								Your information, including Personal Data, may be transferred to - and maintained on -
+								computers located outside of your state, province, country or other governmental
+								jurisdiction where the data protection laws may differ from those of your jurisdiction.
+							</p>
 
-            </ul>
+							<p className="mt-3">
+								If you are located outside United States and choose to provide information to us, please
+								note that we transfer the data, including Personal Data, to United States and process it
+								there. Your consent to this Privacy Policy followed by your submission of such information
+								represents your agreement to that transfer. Quotient HQ will take all the steps reasonably
+								necessary to ensure that your data is treated securely and in accordance with this Privacy
+								Policy and no transfer of your Personal Data will take place to an organisation or a
+								country unless there are adequate controls in place including the security of your data
+								and other personal information.
+							</p>
 
-            <motion.h1
-             initial={{scale : 1}}
-             whileInView={{scale : 1.2}}
-             transition={{duration : 0.7 , ease : "easeIn"}}
-              className="text-4xl font-bold text-[#06F5B6] hover:underline underline-offset-4 relative group tracking-wide text-left mb-8 mt-6 custom-hover"
-            >
-              Legal Basis for Processing Personal Data under the General Data Protection Regulation (GDPR)
-            </motion.h1>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Disclosure of Data
+							</h1>
+							<p>Legal Requirements</p>
+							<p className="mt-3 mb-2">
+								Quotient HQ may disclose your Personal Data in the good faith belief that such action is
+								necessary to:
+							</p>
+							<ul className="space-y-4 list-none">
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To comply with a legal obligation
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To protect and defend the rights or property of Quotient HQ
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To prevent or investigate possible wrongdoing in connection with the Service
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To protect the personal safety of users of the Service or the public
+								</li>
+								<li className="flex items-start">
+									<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+									To protect against legal liability
+								</li>
+							</ul>
 
-            <style jsx>
-            {`
-              .custom-hover {
-                transition: transform 0.3s ease-in-out;
-              }
-              .custom-hover:hover {
-                transform: scale(1.1); /* Increase the scale on hover */
-              }
-            `}
-            </style>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Security of Data
+							</h1>
+							<p>
+								The security of your data is important to us but remember that no method of transmission
+								over the Internet or method of electronic storage is 100% secure. While we strive to use
+								commercially acceptable means to protect your Personal Data, we cannot guarantee its
+								absolute security.
+							</p>
+							<p className="mt-2">
+								Our Policy on "Do Not Track" Signals under the California Online Protection Act (CalOPPA).
+							</p>
+							<p className="mt-2">
+								We do not support Do Not Track ("DNT"). Do Not Track is a preference you can set in your
+								web browser to inform websites that you do not want to be tracked.
+							</p>
+							<p className="mt-2">
+								You can enable or disable Do Not Track by visiting the Preferences or Settings page of
+								your web browser.
+							</p>
+							<p className="mt-2">
+								Your Data Protection Rights under the General Data Protection Regulation (GDPR).
+							</p>
+							<p className="mt-2">
+								If you are a resident of the European Economic Area (EEA), you have certain data
+								protection rights. Quotient HQ aims to take reasonable steps to allow you to correct,
+								amend, delete or limit the use of your Personal Data.
+							</p>
+							<p className="mt-2">
+								If you wish to be informed about what Personal Data we hold about you and if you want it
+								to be removed from our systems, please contact us.
+							</p>
+							<p className="mt-2">
+								In certain circumstances, you have the following data protection rights:
+							</p>
 
-              <p>If you are from the European Economic Area (EEA), Quotient HQ legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Data we collect and the specific context in which we collect it.</p>
-              <p className='mt-4'>Quotient HQ may process your Personal Data because:</p>
-              <ul className="space-y-4 list-none">
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                We need to perform a contract with you
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                You have given us permission to do so
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                The processing is in our legitimate interests and it is not overridden by your rights
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                For payment processing purposes
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To comply with the law
-              </li>
-            </ul>
+							<ul className="space-y-4  mt-2 list-none">
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right to access, update or delete the information we have on you. Whenever
+											possible, you can access, update or request deletion of your Personal Data
+											directly within your account settings section. If you are unable to perform
+											these actions yourself, please contact us to assist you.
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right of rectification. You have the right to have your information
+											rectified if that information is inaccurate or incomplete.
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right to object. You have the right to object to our processing of your
+											Personal Data.
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right of restriction. You have the right to request that we restrict the
+											processing of your personal information.
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right to data portability. You have the right to be provided with a copy
+											of the information we have on you in a structured, machine-readable and
+											commonly used format.
+										</div>
+									</div>
+								</li>
+								<li className="flex items-start">
+									<div className="flex w-full">
+										<div className="w-3/10 flex items-start">
+											<FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
+										</div>
+										<div className="w-7/10">
+											The right to withdraw consent. You also have the right to withdraw your
+											consent at any time where Quotient HQ relied on your consent to process your
+											personal information.
+										</div>
+									</div>
+								</li>
+							</ul>
 
+							<p className="mt-4">
+								Please note that we may ask you to verify your identity before responding to such
+								requests.<br></br>
+								You have the right to complain to a Data Protection Authority about our collection and use
+								of your Personal Data. For more information, please contact your local data protection
+								authority in the European Economic Area (EEA).
+							</p>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Retention of Data</h1>
-              <p>Quotient HQ will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes and enforce our legal agreements and policies.</p>
-              <p className='mt-3'>Quotient HQ will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Service, or we are legally obligated to retain this data for longer periods.</p>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Service Providers
+							</h1>
+							<p>
+								We may employ third party companies and individuals to facilitate our Service ("Service
+								Providers"), provide the Service on our behalf, perform Service-related services or assist
+								us in analysing how our Service is used. These third parties have access to your Personal
+								Data only to perform these tasks on our behalf and are obligated not to disclose or use it
+								for any other purpose.
+							</p>
 
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Analytics
+							</h1>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Transfer of Data</h1>
+							<p>We may use third-party Service Providers to monitor and analyse the use of our Service.</p>
 
-              <p>Your information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Google Analytics
+							</h1>
 
-              <p className='mt-3'>If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer. Quotient HQ will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+							<p>
+								Google Analytics is a web analytics service offered by Google that tracks and reports
+								website traffic. Google uses the data collected to track and monitor the use of our
+								Service. This data is shared with other Google services. Google may use the collected data
+								to contextualise and personalise the ads of its own advertising network. You can opt-out
+								of having made your activity on the Service available to Google Analytics by installing
+								the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics
+								JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics
+								about visits activity. Advertising We may use third-party Service Providers to show
+								advertisements to you to help support and maintain our Service.
+							</p>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Disclosure of Data</h1>
-              <p>Legal Requirements</p>
-              <p className='mt-3 mb-2'>Quotient HQ may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
-              <ul className="space-y-4 list-none">
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To comply with a legal obligation
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To protect and defend the rights or property of Quotient HQ
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To prevent or investigate possible wrongdoing in connection with the Service
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To protect the personal safety of users of the Service or the public
-              </li>
-              <li className="flex items-start">
-                <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                To protect against legal liability
-              </li>
-            </ul>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Google AdSense & DoubleClick Cookie
+							</h1>
 
+							<p>
+								Google, as a third party vendor, uses cookies to serve ads on our Service. Google's use of
+								the DoubleClick cookie enables it and its partners to serve ads to our users based on
+								their visit to our Service or other websites on the Internet.
+							</p>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Security of Data</h1>
-              <p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
-              <p className='mt-2'>Our Policy on "Do Not Track" Signals under the California Online Protection Act (CalOPPA).</p>
-              <p className='mt-2'>We do not support Do Not Track ("DNT"). Do Not Track is a preference you can set in your web browser to inform websites that you do not want to be tracked.</p>
-              <p className='mt-2'>You can enable or disable Do Not Track by visiting the Preferences or Settings page of your web browser.</p>
-              <p className='mt-2'>Your Data Protection Rights under the General Data Protection Regulation (GDPR).</p>
-              <p className='mt-2'>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. Quotient HQ aims to take reasonable steps to allow you to correct, amend, delete or limit the use of your Personal Data.</p>
-              <p className='mt-2'>If you wish to be informed about what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.</p>
-              <p className='mt-2'>In certain circumstances, you have the following data protection rights:</p>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Payments
+							</h1>
 
-              <ul className="space-y-4  mt-2 list-none">
-              <li className="flex items-start">
+							<p>
+								We may provide paid products and/or services within the Service. In that case, we use
+								third-party services for payment processing (e.g. payment processors). We will not store
+								or collect your payment card details.
+							</p>
+							<p>
+								That information is provided directly to our third-party payment processors whose use of
+								your personal information is governed by their Privacy Policy. These payment processors
+								adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council,
+								which is a joint effort of brands like Visa, MasterCard, American Express and Discover.
+								PCI-DSS requirements help ensure the secure handling of payment information.
+							</p>
 
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right to access, update or delete the information we have on you. Whenever possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right of rectification. You have the right to have your information rectified if that information is inaccurate or incomplete.
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right to object. You have the right to object to our processing of your Personal Data.
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right of restriction. You have the right to request that we restrict the processing of your personal information.
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right to data portability. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <div className="flex w-full">
-                <div className="w-3/10 flex items-start">
-                  <FaArrowRight className="text-[#06F5B6] mt-1 mr-2" />
-                </div>
-                <div className="w-7/10">
-                  The right to withdraw consent. You also have the right to withdraw your consent at any time where Quotient HQ relied on your consent to process your personal information.
-                </div>
-              </div>
-            </li>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Links to Other Sites
+							</h1>
 
-            </ul>
+							<p>
+								Our Service may contain links to other sites that are not operated by us. If you click a
+								third party link, you will be directed to that third party's site. We strongly advise you
+								to review the Privacy Policy of every site you visit. We have no control over and assume
+								no responsibility for the content, privacy policies or practices of any third party sites
+								or services.
+							</p>
 
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Children's Privacy
+							</h1>
 
-              <p className='mt-4'>Please note that we may ask you to verify your identity before responding to such requests.<br></br>
-              You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA).</p>
+							<p>
+								Our Service does not address anyone under the age of 13 ("Children"). We do not knowingly
+								collect personally identifiable information from anyone under the age of 13. If you are a
+								parent or guardian and you are aware that your Child has provided us with Personal Data,
+								please contact us. If we become aware that we have collected Personal Data from children
+								without verification of parental consent, we take steps to remove that information from
+								our servers.
+							</p>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Service Providers</h1>
-              <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), provide the Service on our behalf, perform Service-related services or assist us in analysing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+							<h1
+								className="text-3xl font-bold tracking-wide text-center mb-8 mt-12"
+								style={{ textAlign: "left" }}
+							>
+								Changes to This Privacy Policy
+							</h1>
 
+							<p>
+								We may update our Privacy Policy from time to time. We will notify you of any changes by
+								posting the new Privacy Policy on this page. We will let you know via email and/or a
+								prominent notice on our Service, prior to the change becoming effective and update the
+								"effective date" at the top of this Privacy Policy. You are advised to review this Privacy
+								Policy periodically for any changes. Changes to this Privacy Policy are effective when
+								they are posted on this page.
+							</p>
+						</div>
+					</div>
+				</div>
 
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Analytics</h1>
-
-              <p>We may use third-party Service Providers to monitor and analyse the use of our Service.</p>
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Google Analytics</h1>
-
-              <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualise and personalise the ads of its own advertising network. You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity. Advertising We may use third-party Service Providers to show advertisements to you to help support and maintain our Service.</p>
-
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }} >Google AdSense & DoubleClick Cookie</h1>
-
-              <p>Google, as a third party vendor, uses cookies to serve ads on our Service. Google's use of the DoubleClick cookie enables it and its partners to serve ads to our users based on their visit to our Service or other websites on the Internet.</p>
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }}>Payments</h1>
-
-              <p>We may provide paid products and/or services within the Service. In that case, we use third-party services for payment processing (e.g. payment processors). We will not store or collect your payment card details.</p>
-              <p>That information is provided directly to our third-party payment processors whose use of your personal information is governed by their Privacy Policy. These payment processors adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover. PCI-DSS requirements help ensure the secure handling of payment information.</p>
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }}>Links to Other Sites</h1>
-
-              <p>Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }}>Children's Privacy</h1>
-
-              <p>Our Service does not address anyone under the age of 13 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and you are aware that your Child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
-
-              <h1 className='text-3xl font-bold tracking-wide text-center mb-8 mt-12' style={{ textAlign: 'left' }}>Changes to This Privacy Policy</h1>
-
-              <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-              </p>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
-        <Footer />
-      </Inner>
-    </div>
-  );
-}
+				<div className="w-full h-[2px] bg-[#06F5B6] mt-4"></div>
+				<Footer />
+			</Inner>
+		</div>
+	);
+};
 
 export default PolicyP;

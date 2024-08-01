@@ -1,4 +1,3 @@
-import React from "react";
 import Inner from "../components/layouts/Inner";
 import About from "../components/home/About";
 import Games from "../components/home/Games";
